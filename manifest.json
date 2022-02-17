@@ -1,0 +1,14 @@
+﻿{
+ "short_name": "Smile Engine",
+ "name": "Smile Engine by Mohammad Norouzi",
+ "icons": [{
+  "src": "app/images/icon.png",
+  "type": "image/png",
+  "sizes": "512x512"
+ }],
+ "theme_color": "#ff0f00",
+ "background_color": "#ff0f00",
+ "start_url": "index.php",
+ "display": "browser",
+ "orientation": "any"
+}

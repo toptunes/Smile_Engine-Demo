@@ -1,0 +1,5 @@
+#dialogs{
+width: 960px; height: 600px; 
+}
+.app-dialog .modal-dialog { margin: auto; width: 960px; height: 600px; }
+.app-dialog .modal-dialog .modal-content { width: 960px; height: 600px; }

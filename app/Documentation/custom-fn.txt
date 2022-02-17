@@ -1,0 +1,10 @@
+custom-fn چیست
+
+درصورتی که یک دکمه ساختید و قصد داشتید که کاربرد با کلیک کردن بر روی این دکمه یک فانکشن سفارشی از جاوا اسکریپت را اجرا کنید
+در تگ دکمه این را قرار بدهید
+custom-fn="1"
+
+نمونه کامل
+
+<a href="#" id="myCustomFunctionName" custom-fn="1" data-query="sign_up" class="btn_id">'.$read_t['sign_up'].'</a>
+

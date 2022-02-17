@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "bootstrap": "^4.5.3",
+    "codemirror": "^5.63.0",
+    "izitoast": "^1.4.0",
+    "jquery": "^3.6.0",
+    "js-sha512": "^0.8.0",
+    "jshint": "^2.13.1",
+    "jsonlint": "^1.6.3",
+    "jstree": "^3.3.12"
+  }
+}
