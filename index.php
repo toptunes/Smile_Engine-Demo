@@ -1,31 +1,34 @@
 <?php
 
-
-readfile ("app/lib/meta.html");
+readfile("app/lib/meta.html");
 ?>
 <style>
 <?php
 // some reason for online live develope mode made me to do this
 ob_start();
 include ("./app/styles/toptunes.ir_app_1.css");
-$code= ob_get_clean();
-echo str_replace(array("\r", "\n"), '', $code);
+$code = ob_get_clean();
+echo str_replace(array(
+    "\r",
+    "\n"
+) , '', $code);
 
 // some reason for online live develope mode made me to do this
 ob_start();
- include "./app/styles/mainpage.css.php";
-$code= ob_get_clean();
-echo str_replace(array("\r", "\n"), '', $code);
-
-
+include "./app/styles/mainpage.css.php";
+$code = ob_get_clean();
+echo str_replace(array(
+    "\r",
+    "\n"
+) , '', $code);
 
 ?>
 
 </style>
  <script>
       <?php
-
 //include "./app/scripts/js_core.php";
+
 ?>
        <?php
 // some reason for online live develope mode made me to do this
@@ -56,7 +59,6 @@ echo file_get_contents("./app/scripts/icons.js");
  <script src="/app/scripts/app.js.php?42"></script>
 
       <?php
-
 include "./app/scripts/threejs_codes.php";
 ?>
 

@@ -12,17 +12,6 @@ if(!defined('24647ETW$@^&@%@%*#')) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 if(isset($data->datacontent)){
 $datacontent = $data->datacontent;
 }

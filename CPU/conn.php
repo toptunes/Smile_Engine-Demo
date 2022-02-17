@@ -1,31 +1,39 @@
 <?php
-
-if(!defined('24647ETW$@^&@%@%*#')) {
-   die('error 24');
+if (!defined('24647ETW$@^&@%@%*#'))
+{
+    die('error 24');
 }
- 
-class jjson {
-        public static function jsonToDebug($jsonText = '')
+
+class jjson
+{
+    public static function jsonToDebug($jsonText = '')
     {
         $arr = json_decode($jsonText, true);
         $html = "";
-        if ($arr && is_array($arr)) {
+        if ($arr && is_array($arr))
+        {
             $html .= self::_arrayToHtmlTableRecursive($arr);
         }
         return $html;
     }
 
-    private static function _arrayToHtmlTableRecursive($arr) {
+    private static function _arrayToHtmlTableRecursive($arr)
+    {
         $str = "<table><tbody>";
-        foreach ($arr as $key => $val) {
+        foreach ($arr as $key => $val)
+        {
             $str .= "<tr>";
             $str .= "<td>$key</td>";
             $str .= "<td>";
-            if (is_array($val)) {
-                if (!empty($val)) {
+            if (is_array($val))
+            {
+                if (!empty($val))
+                {
                     $str .= self::_arrayToHtmlTableRecursive($val);
                 }
-            } else {
+            }
+            else
+            {
                 $str .= "<strong>$val</strong>";
             }
             $str .= "</td></tr>";
@@ -34,116 +42,101 @@ class jjson {
 
         return $str;
     }
-    
+
 }
 
-
-
-
-
-
-
-
-
-
-
-class conn 
+class conn
 {
-    
-private $servername;
-private $username;
-private $password;
-private $dbname;
-private $sql_q;
-public $conn;
 
-  public function __construct()
+    private $servername;
+    private $username;
+    private $password;
+    private $dbname;
+    private $sql_q;
+    public $conn;
+
+    public function __construct()
     {
-  
+
     }
 
- public function getDBready()
+    public function getDBready()
     {
-       
+
         $this->servername = "localhost";
         $this->username = "root";
         $this->password = "";
         $this->dbname = "abyekiha_app";
-       
-      $this->conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
-        if ($this->conn->connect_error) {
-         return "Connection failed: " . $this->conn->connect_error;
+
+        $this->conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
+        if ($this
+            ->conn
+            ->connect_error)
+        {
+            return "Connection failed: " . $this
+                ->conn->connect_error;
         }
     }
 
-public function update_sql($sql)
+    public function update_sql($sql)
     {
 
- mysqli_query($this->conn,"SET NAMES utf8");
-      
-if ($this->conn->query($sql) === TRUE) {
-  return "1";
-} else {
-  return $sql."<msg></msg>".$conn->error;
-}
+        mysqli_query($this->conn, "SET NAMES utf8");
 
-}
+        if ($this
+            ->conn
+            ->query($sql) === true)
+        {
+            return "1";
+        }
+        else
+        {
+            return $sql . "<msg></msg>" . $conn->error;
+        }
 
-public function read_sql($sql)
+    }
+
+    public function read_sql($sql)
     {
- mysqli_query($this->conn,"SET NAMES utf8");
-      
+        mysqli_query($this->conn, "SET NAMES utf8");
 
-$result = $this->conn->query($sql);
+        $result = $this
+            ->conn
+            ->query($sql);
 
-if(isset($result->num_rows) && $result->num_rows >0){
+        if (isset($result->num_rows) && $result->num_rows > 0)
+        {
 
-$rows = $result->fetch_all(MYSQLI_ASSOC);
-$all= json_encode($rows);
-return $all;
-} else {
-  return "<msg>0 results</msg>";
-}
+            $rows = $result->fetch_all(MYSQLI_ASSOC);
+            $all = json_encode($rows);
+            return $all;
+        }
+        else
+        {
+            return "<msg>0 results</msg>";
+        }
 
+    }
 
-
-}
-
-public function insert_sql($sql)
+    public function insert_sql($sql)
     {
-       
 
- mysqli_query($this->conn,"SET NAMES utf8");
-      
-if ($this->conn->query($sql) === TRUE) {
-  return "1";
-} else {
-  return $sql.$conn->error."<msg>$conn->error</msg>".$conn->error;
+        mysqli_query($this->conn, "SET NAMES utf8");
+
+        if ($this
+            ->conn
+            ->query($sql) === true)
+        {
+            return "1";
+        }
+        else
+        {
+            return $sql . $conn->error . "<msg>$conn->error</msg>" . $conn->error;
+        }
+
+    }
+
 }
-
-
-}
-
-
-
-
-
-}
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
 
 /*
 public function readdata($sql){
@@ -181,3 +174,4 @@ if ($result->num_rows > 0) {
 
 }
 */
+
