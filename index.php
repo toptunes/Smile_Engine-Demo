@@ -5,13 +5,13 @@ readfile ("app/lib/meta.html");
 ?>
 <style>
 <?php
-
+// some reason for online live develope mode made me to do this
 ob_start();
 include ("./app/styles/toptunes.ir_app_1.css");
 $code= ob_get_clean();
 echo str_replace(array("\r", "\n"), '', $code);
 
-
+// some reason for online live develope mode made me to do this
 ob_start();
  include "./app/styles/mainpage.css.php";
 $code= ob_get_clean();
@@ -28,7 +28,7 @@ echo str_replace(array("\r", "\n"), '', $code);
 //include "./app/scripts/js_core.php";
 ?>
        <?php
-
+// some reason for online live develope mode made me to do this
 echo file_get_contents("./app/scripts/smi_lee.js");
 echo file_get_contents("./app/scripts/icons.js");
 
