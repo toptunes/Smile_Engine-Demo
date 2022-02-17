@@ -1,4 +1,4 @@
-Smile Engine (beta)
+Smile Engine (It is being developed.)
 =======
 
 The project is not released yet
