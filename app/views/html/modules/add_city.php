@@ -10,34 +10,19 @@ include 'sms_sign_up.php';
 
 
 $preload_html .= preload('div','add_city','
-
-
 <div class="container fade-in mb-5">
-	
-       '.$child_add_city.'
-<div>
-
+   '.$child_add_city.'
+   <div>
       <div class="row">
-        <div class="col-3 p-4">آی دی</div>
-        <div class="col-3 p-4">تاریخ ارسال</div>
-        <div class="col-3 p-4">نام شهر</div>
-		  <div class="col-3 p-4">ویرایش</div>
+         <div class="col-3 p-4">آی دی</div>
+         <div class="col-3 p-4">تاریخ ارسال</div>
+         <div class="col-3 p-4">نام شهر</div>
+         <div class="col-3 p-4">ویرایش</div>
       </div>
-
-	
-	'.$child_loop_city_name_list.'
-      
-    
+      '.$child_loop_city_name_list.'
+   </div>
 </div>
-
-
-
-			
-			
- </div>
- '.$child_footer.'  
-            
-
+'.$child_footer.'
 ');
 
 
