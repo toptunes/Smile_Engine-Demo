@@ -13,7 +13,7 @@ Designed by Mohammad Norouzi
 3. _If you have the experience, you can make preload modules.(Client-side render)_
 4. _many "include" files will replace on release version (automatically)_
 5. _This Framework is suited for small teams that want to make easy scalable projects_
-6. _You can't add functions inside modules. either Do procedural programming or make a function on CPU/fn.php and use functional_
+6. _You can't Define the function inside modules. either Do procedural programming or make a function on CPU/fn.php and use functional_
 7. _All existing modules are an example and are not part of the framework_
 
 
