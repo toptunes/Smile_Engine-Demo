@@ -1,4 +1,4 @@
-Smile Engine (It is being developed.)
+Smile Engine is a Full-stack PWA javascript that works with PHP (It is being developed.)
 =======
 If you know basic PHP and HTML or Bootstrap you can make an application. Without knowing javascript
 
