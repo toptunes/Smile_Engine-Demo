@@ -1,6 +1,8 @@
 Smile Engine (It is being developed.)
 =======
-If you know basic PHP and HTML or Bootstrap you can make an application. Without knowing javascriptThe project is not released yet.
+If you know basic PHP and HTML or Bootstrap you can make an application. Without knowing javascript
+
+The project is not released yet.
 
 Designed by Mohammad Norouzi
 
