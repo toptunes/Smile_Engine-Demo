@@ -21,8 +21,3 @@ https://www.linkedin.com/in/toptunes/
 
 Online Demo : http://app.abyekiha.com/
 _Login into the panel with this number: 09354894522_
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 4193fe63dd4036009debeae7cd33d21f36d22e8e
