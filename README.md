@@ -5,7 +5,7 @@ If you know basic PHP and HTML or Bootstrap, you can make an application Without
 
 ### Install & Usage
 
-The project is not released yet.
+The project is not ready to use.
 
 ### tutorial
 
