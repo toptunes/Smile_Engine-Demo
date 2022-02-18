@@ -1,9 +1,10 @@
 <?php
+   // some reason for live develop mode made me do this
    readfile("app/lib/meta.html");
    ?>
 <style>
    <?php
-      // some reason for online live develope mode made me to do this
+      // some reason for live develop mode made me do this
       ob_start();
       include ("./app/styles/toptunes.ir_app_1.css");
       $code = ob_get_clean();
@@ -12,7 +13,7 @@
           "\n"
       ) , '', $code);
       
-      // some reason for online live develope mode made me to do this
+      // some reason for live develop mode made me do this
       ob_start();
       include "./app/styles/mainpage.css.php";
       $code = ob_get_clean();
@@ -29,7 +30,7 @@
       
       ?>
     <?php
-      // some reason for online live develope mode made me to do this
+      // some reason for live develop mode made me do this
       echo file_get_contents("./app/scripts/smi_lee.js");
       echo file_get_contents("./app/scripts/icons.js");
       
