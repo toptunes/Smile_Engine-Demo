@@ -53,6 +53,14 @@
    
    
    $data = json_decode($json);
+
+
+   /* 
+   ..........................................
+   Pay attention! some  "include" files will replace on release version (automatically)
+   ..........................................
+  */
+
    include "../../../CPU/conn.php";
    include "../../../CPU/fn.php";
    include "../../../CPU/get_ready.php";
