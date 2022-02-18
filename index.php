@@ -1,11 +1,12 @@
 <?php
-   // some reason for live develop mode made me do this
+   // Pay attention! some "include" files will replace on release version 
+
    readfile("app/lib/meta.html");
    ?>
 <style>
    <?php
-      // some reason for live develop mode made me do this
-      ob_start();
+      //  Pay attention! some "include" files will replace on release version
+
       include ("./app/styles/toptunes.ir_app_1.css");
       $code = ob_get_clean();
       echo str_replace(array(
@@ -13,7 +14,7 @@
           "\n"
       ) , '', $code);
       
-      // some reason for live develop mode made me do this
+      //  Pay attention! some "include" files will replace on release version
       ob_start();
       include "./app/styles/mainpage.css.php";
       $code = ob_get_clean();
@@ -30,7 +31,7 @@
       
       ?>
     <?php
-      // some reason for live develop mode made me do this
+      //  Pay attention! some "include" files will replace on release version
       echo file_get_contents("./app/scripts/smi_lee.js");
       echo file_get_contents("./app/scripts/icons.js");
       
