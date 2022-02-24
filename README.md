@@ -45,6 +45,9 @@ if you want to use json you should learn how to make preload modules
 5 - If you use XAMPP, open http://localhost:8080/example (you can see module)
 
 
+6 - Smile Engine can work with object-oriented programming but modules are like objects. try to use it functional programming
+
+
 ### tutorials
 
 _Video tutorials is coming soon._
