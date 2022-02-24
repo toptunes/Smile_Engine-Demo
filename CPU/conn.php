@@ -69,9 +69,7 @@ class conn
         $this->dbname = "abyekiha_app";
 
         $this->conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
-        if ($this
-            ->conn
-            ->connect_error)
+        if ($this->conn->connect_error)
         {
             return "Connection failed: " . $this
                 ->conn->connect_error;
@@ -83,9 +81,7 @@ class conn
 
         mysqli_query($this->conn, "SET NAMES utf8");
 
-        if ($this
-            ->conn
-            ->query($sql) === true)
+        if ($this->conn->query($sql) === true)
         {
             return "1";
         }
@@ -100,9 +96,7 @@ class conn
     {
         mysqli_query($this->conn, "SET NAMES utf8");
 
-        $result = $this
-            ->conn
-            ->query($sql);
+        $result = $this->conn->query($sql);
 
         if (isset($result->num_rows) && $result->num_rows > 0)
         {
@@ -123,9 +117,7 @@ class conn
 
         mysqli_query($this->conn, "SET NAMES utf8");
 
-        if ($this
-            ->conn
-            ->query($sql) === true)
+        if ($this->conn->query($sql) === true)
         {
             return "1";
         }
