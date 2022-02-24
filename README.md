@@ -7,7 +7,7 @@ Smile Engine is a Full-stack PWA javascript and works with PHP
 ### Install & Usage
 
 
-1 - Get ```git clone --bare  https://github.com/toptunes/Smile_Engine-Demo```
+1 - Get ```https://github.com/toptunes/Smile_Engine-Demo```
 
 2 - Go to ```/CPU/conn.php``` and set database name and password to MySQL (it works with MySQLi - no PDO yet)
 
