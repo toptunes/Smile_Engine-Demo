@@ -11,9 +11,9 @@ Smile Engine is a Full-stack PWA javascript and works with PHP
 
 
 ```
-it will work only in root folder or if you use xampp make your xampp setting
+It will work only in the root folder or if you use XAMPP make changes in the XAMPP setting:
 
-DocumentRoot "c:/xampp/htdocs"  to DocumentRoot "c:/xampp/htdocs/Smile_Engine-Demo" 
+DocumentRoot "c:/xampp/htdocs/Smile_Engine-Demo" 
 
 ```
 
