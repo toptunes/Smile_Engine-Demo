@@ -21,6 +21,14 @@ If you use DirectAdmin or Cpanel you should install it in the /public/ directory
 ```
 
 2 - Go to ```/CPU/conn.php``` and set database name and password to MySQL (it works with MySQLi - no PDO yet)
+```
+after you set the database name
+
+Import this structure as an example.
+
+https://github.com/toptunes/Smile_Engine-Demo/blob/master/database_name.sql
+
+```
 
 3 - Almost All php files in ```app/views/html/modules/``` is an examples.
 
