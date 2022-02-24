@@ -48,9 +48,7 @@ if you want to use json you should learn how to make preload modules
 
 6 - Smile Engine can work with object-oriented programming but modules are like objects. try to use it functional programming
 
-7 - Smile Engine can work with object-oriented programming but modules are like objects. try to use it functional programming
-
-8 - you can change URL routing by changing the array in : ```app/views/html/switcher/routing.php```
+7 - you can change URL routing by changing the array in : ```app/views/html/switcher/routing.php```
 
 ### tutorials
 
