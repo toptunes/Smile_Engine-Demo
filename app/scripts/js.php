@@ -367,7 +367,7 @@ window.app = new Vue({
     var
       app = this;
 
-    app.setVar('devicePlatform', '//127.0.0.1/app/views/html');
+    app.setVar('devicePlatform', '/app/views/html');
 
 
   },
