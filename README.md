@@ -43,9 +43,9 @@ if you want to use json you should learn how to make preload modules
 5 - If you use XAMPP, open http://localhost:8080/example (you can see module)
 
 
-### tutorial
+### tutorials
 
-_Video tutorial is coming soon._
+_Video tutorials is coming soon._
 
 ### Designed by Mohammad Norouzi
 
