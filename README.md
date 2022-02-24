@@ -38,9 +38,9 @@ https://github.com/toptunes/Smile_Engine-Demo/blob/master/database_name.sql
 
 $html_final = module('div','example','
 
-Here you can write html, json or just write hello world
+Here you can write HTML, JSON, or just write hello world
 
-if you want to use json you should learn how to make preload modules
+If you want to use JSON you should learn how to make preload modules
 
 ');
 
