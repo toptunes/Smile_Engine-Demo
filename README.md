@@ -3,7 +3,7 @@ Smile Engine
 
 Smile Engine is a Full-stack PWA javascript and works with PHP
 
-### If you are a programmer, let us make this project great by sharing your knowledge
+### If you are a programmer, let's make this project great by sharing your knowledge
 
 
 ### Install & Usage
