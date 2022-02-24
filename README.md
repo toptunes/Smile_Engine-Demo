@@ -1,12 +1,45 @@
-Smile Engine is a Full-stack PWA javascript that works with PHP (It is being developed.)
+Smile Engine
 =======
-If you know basic PHP and HTML or Bootstrap you can make an application. Without knowing javascript
 
-The project is not released yet.
+Smile Engine is a Full-stack PWA javascript and works with PHP
+
+
+### Install & Usage
+
+
+1 - Get ```git clone --bare  https://github.com/toptunes/Smile_Engine-Demo```
+
+2 - Go to ```/CPU/conn.php``` and set database name and password to MySQL (it works with MySQLi - no PDO yet)
+
+3 - Almost All php files in ```app/views/html/modules/``` is an examples.
+
+4 - Make a new file "example.php". And copy this code below.
+
+```php
+<?php
+
+
+$html_final = module('div','example','
+
+Here you can write $html, $json or just write hello world
+
+if you want to use json you should learn how to make preload modules
+
+');
+
+
+?>
+
+```
+
+5 - If you use XAMPP, open http://localhost:8080/example (you can see module)
+
+
+### tutorial
 
 _Video tutorial is coming soon._
 
-Designed by Mohammad Norouzi
+### Designed by Mohammad Norouzi
 
 1. _It's up to you how to make modules. Complete Client-side render without knowing javascript OR half client-side render._
 2. _We will make a lot of modules as a PHP file. But on per request will load one or maximum 5 child modules._
@@ -16,8 +49,13 @@ Designed by Mohammad Norouzi
 6. _You can't Define the function inside modules. either Do procedural programming or make a function on_ CPU/fn.php _and Do functional_
 7. _All existing modules are an example and are not part of the framework_
 
+### Links
 
 https://www.linkedin.com/in/toptunes/
 
 Online Demo : http://app.abyekiha.com/
 _Login into the panel with this number: 09354894522_
+
+
+
+
