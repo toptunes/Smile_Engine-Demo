@@ -18,16 +18,10 @@ $child_header_not_login= child('div','child_header_not_login','
 <div class="header-section-right-nav-menu">
        <ul class="nav-menu">
 
-     <li class="nav-item">
-	<a href="#" data-bs-toggle="offcanvas" onclick="offcanvas_right()" data-bs-target="#my_modal" class="nav-link">
-			<i class="fas fa-stream"></i>
-دسته بندی کالا ها
-		</a>
-	</li>
 
    <li class="nav-item">
-	<a  href="/store_list" id="store_list" data-query="store_list" class="nav-link btn_id">
-		  لیست فروشگاه ها
+	<a  href="/example" id="example" data-query="example" class="nav-link btn_id">
+		 Example Module
 		</a>
 	</li>	
   
