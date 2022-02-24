@@ -23,7 +23,7 @@ If you use DirectAdmin or Cpanel you should install it in the /public/ directory
 
 3 - Almost All php files in ```app/views/html/modules/``` is an examples.
 
-4 - Make a new file "example.php". And copy this code below.
+4 - Make a new file "example.php" in ```/modules/``` . And copy this code below.
 
 ```php
 <?php
