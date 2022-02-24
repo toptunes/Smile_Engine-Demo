@@ -52,13 +52,13 @@ class switcher_index
         if (strpos($path, '/') !== false)
         {
             $q_path = explode("/", $path);
-            $this->switcher_case = $q_path[0] ? ? '';
+            $this->switcher_case = $q_path[0] ?? '';
             for ($x_rothing = 1;$x_rothing <= count($q_path);$x_rothing++)
             {
                 $
                 {
                     "_q$x_rothing"
-                } = $q_path[$x_rothing] ? ? '';
+                } = $q_path[$x_rothing] ?? '';
             }
 
         }

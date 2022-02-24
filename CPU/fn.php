@@ -323,7 +323,7 @@ function everything_in_tags($string, $tagname)
 {
     $pattern = "#<\s*?$tagname\b[^>]*>(.*?)</$tagname\b[^>]*>#s";
     preg_match($pattern, $string, $matches);
-    return $matches[1] ? ? '';
+    return $matches[1] ?? '';
 }
 
 function str_replace_first($from, $to, $content)

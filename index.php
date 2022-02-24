@@ -33,7 +33,7 @@
     <?php
       //  Pay attention! some "include" files will replace on release version
       echo file_get_contents("./app/scripts/smi_lee.js");
-      echo file_get_contents("./app/scripts/icons.js");
+  
       
       ?>
 </script>
