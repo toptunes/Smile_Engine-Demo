@@ -6,7 +6,34 @@ Smile Engine is a Full-stack PWA javascript and works with PHP
 
 ### Install & Usage
 
-soon
+
+1 - Get "git clone --bare  https://github.com/toptunes/Smile_Engine-Demo"
+
+2 - go to /CPU/conn.php and set database name and password to MySQL (it works with MySQLi - no PDO yet)
+
+3 - almost All php files in "app/views/html/modules/" is an examples.
+
+4 - make a new php file "example.php" and put this code in it :
+
+```
+<?php
+
+
+$html_final = module('div','example','
+
+Here you can write $html, $json or just write hello world
+
+if you want to use json you should learn how to make preload modules
+
+');
+
+
+?>
+
+```
+
+5 - if you use xammp open http://localhost:8080/example  (you can see module
+
 
 ### tutorial
 
