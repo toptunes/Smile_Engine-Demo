@@ -15,7 +15,7 @@ Smile Engine is a Full-stack PWA javascript and works with PHP
 
 4 - make a new php file "example.php" and put this code in it :
 
-```
+```php
 <?php
 
 
