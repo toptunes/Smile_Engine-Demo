@@ -15,6 +15,8 @@ It will work only in the root folder or if you use XAMPP make changes in the XAM
 
 DocumentRoot "c:/xampp/htdocs/Smile_Engine-Demo" 
 
+If you use DirectAdmin or Cpanel you should install it in the /public/ directory
+
 ```
 
 2 - Go to ```/CPU/conn.php``` and set database name and password to MySQL (it works with MySQLi - no PDO yet)
