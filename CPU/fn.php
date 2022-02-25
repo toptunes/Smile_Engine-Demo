@@ -38,19 +38,8 @@ function update_mysql($sql)
 
 function Access_permission($user, $userlevel, $forwhat)
 {
-    if ($userlevel >= $user)
-    {
 
-        $banned = "";
-
-    }
-    else
-    {
-        $banned = "1";
-
-    }
-
-    return $banned;
+    return $banned = $userlevel >= $user ? "" : "1";
 
 }
 
@@ -69,7 +58,7 @@ function sync()
 
 function child($tag, $name, $data)
 {
-    //sorry don't take it serious
+    //don't take it serious
     $data = str_replace("<form", '<form id="' . $name . '"', $data);
     $data = str_replace('id="form_submit"', 'id="form_submit" who-id="' . $name . '"', $data);
     $data = str_replace('id="form_submit"', 'id="_submit' . $name . '"', $data);
@@ -81,7 +70,7 @@ function child($tag, $name, $data)
 
 function admin($tag, $name, $data)
 {
-     //sorry don't take it serious
+     //don't take it serious
     $data = str_replace("<form", '<form id="' . $countme . $name . '"', $data);
     $data = str_replace('id="form_submit"', 'id="form_submit" who-id="' . $countme . $name . '"', $data);
     $data = str_replace('id="form_submit"', 'id="_submit' . $countme . $name . '"', $data);
@@ -102,7 +91,7 @@ function fill($tag, $name, $data)
 function mini($tag, $name, $data)
 {
 
-     //sorry don't take it serious
+     //don't take it serious
     $data = str_replace("<form", '<form id="' . $countme . $name . '"', $data);
 
     $data = str_replace('id="form_submit"', 'id="form_submit" who-id="' . $countme . $name . '"', $data);
@@ -310,8 +299,8 @@ function get_json($tagname, $string)
 
 function send_sms($to, $from, $text)
 {
-    $userx = '9128815208';
-    $passx = 'SA@09370173421sa';
+    $userx = '';
+    $passx = '';
 
     $text = urlencode($text);
     $from = urlencode($from);
