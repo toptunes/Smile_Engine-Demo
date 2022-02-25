@@ -37,7 +37,6 @@ $json = file_get_contents('php://input');
 
 
 
-
 if (isset($_GET['q'])) $path = htmlspecialchars($_GET['q']);
 if (isset($_GET['nav'])) $nav = htmlspecialchars($_GET['nav']);
 if (isset($_GET['o'])){
@@ -51,29 +50,22 @@ if($path==''){
 $nav =1;
 }
 
-include "./switcher/routing.php";
 
 
 $data = json_decode($json);
-include "../../../CPU/conn.php";
-include "../../../CPU/fn.php";
-include "../../../CPU/get_ready.php";
 
-include "../../../CPU/switcher_index.php";
+require "../../../autoload.php";
 
 
-include "./switcher/database_global.php";
-include "./switcher/render_element_patterns.php";
 
 
 
 
 if($path == "mas"){
-include "./switcher/lanq_index.php";
-
-include "./switcher/security.php";
-include "./switcher/database_onstart.php";
-include "./preload.php";
+    include "./switcher/lanq_index.php";
+    include "./switcher/security.php";
+    include "./switcher/database_onstart.php";
+    include "./preload.php";
 
 $dbox = str_ireplace($findkey2,$replacevalue2,  $dbox);
 $time_elapsed_secs = microtime(true) - $start;
@@ -127,9 +119,6 @@ $memoryend = round(memory_get_usage()/1048576,2).''.' MB';
 
 $fin_method = $method_select[''.$other_method.''] ?? '';
 
-
-
-/*echo '{"method_fill":"'.$fin_method.'", "elementbox" : "'.$locateat.'" , "case" : "'.$s_case.'" , "Access":"'.$other_method.'", "path":"'.$path.'", "app_msg":"'.$html_msg.'", "app_data":"'.$html_final.'", "password":"", "username":"" ,"app_nav":"'.$app_nav.'" ,"el":"'.$el1.'","el2":"'.$el2.'" ,"el3":"'.$el3.'" ,"time_elapsed_secs":"'.$time_elapsed_secs.'" ,"memorys":"'.$memorystart.'" ,"memorye":"'.$memoryend.'" }';*/
 
 echo '{"method_fill":"'.$fin_method.'", "elementbox" : "'.$locateat.'" , "case" : "'.$s_case.'" , "Access":"'.$other_method.'", "path":"'.$path.'", "app_msg":"'.$html_msg.'", "app_data":'.$html_final.', "password":"", "username":"" ,"app_nav":'.$app_nav.',"el":"'.$el1.'","el2":"'.$el2.'" ,"el3":"'.$el3.'" ,"time_elapsed_secs":"'.$time_elapsed_secs.'" ,"memorys":"'.$memorystart.'" ,"memorye":"'.$memoryend.'" }';
 

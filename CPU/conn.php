@@ -90,40 +90,4 @@ class conn
 
 }
 
-/*
-public function readdata($sql){
-    
-    $sql = "SELECT * FROM `quiz`";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-
-  while($row = $result->fetch_assoc()) {
-    //echo "id: " . $row["id"]. " - Question: " . $row["Question"]. " " . $row["answer1"]. "<br>";
-    $Question = urldecode($row["Question"]);
-   
-   
-     $answer1 = urldecode($row["answer1"]);
-   
-     $answer2 = urldecode($row["answer2"]);
-  
-     $answer3 = urldecode($row["answer3"]);
-  
-     $answer4 = urldecode($row["answer4"]);
-    
-  }
-} else {
-  echo "0 results";
-}
-    
-    
-}
-
-
-
-
-
-
-}
-*/
 
