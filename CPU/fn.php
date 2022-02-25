@@ -62,8 +62,7 @@ function child($tag, $name, $data)
     $data = str_replace("<form", '<form id="' . $name . '"', $data);
     $data = str_replace('id="form_submit"', 'id="form_submit" who-id="' . $name . '"', $data);
     $data = str_replace('id="form_submit"', 'id="_submit' . $name . '"', $data);
-    $now = strtotime("now");
-    $export = $data . "";
+    $export = $data;
 
     return $export;
 }
@@ -74,8 +73,8 @@ function admin($tag, $name, $data)
     $data = str_replace("<form", '<form id="' . $countme . $name . '"', $data);
     $data = str_replace('id="form_submit"', 'id="form_submit" who-id="' . $countme . $name . '"', $data);
     $data = str_replace('id="form_submit"', 'id="_submit' . $countme . $name . '"', $data);
-    $now = strtotime("now");
-    $export = $data . "";
+
+    $export = $data;
 
     return $export;
 }
@@ -93,10 +92,8 @@ function mini($tag, $name, $data)
 
      //don't take it serious
     $data = str_replace("<form", '<form id="' . $countme . $name . '"', $data);
-
     $data = str_replace('id="form_submit"', 'id="form_submit" who-id="' . $countme . $name . '"', $data);
     $data = str_replace('id="form_submit"', 'id="_submit' . $countme . $name . '"', $data);
-
     $export = $data;
     return $export;
 }
