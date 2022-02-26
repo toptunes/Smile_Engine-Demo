@@ -58,7 +58,7 @@ If you want to use JSON you should learn how to make preload modules
 
 ### tutorials
 
-_If you know core PHP you already know how to use Smileengine, but some points exist about JS part that I will say soon!_
+_If you know core PHP you already know how to use SmileEngine, but some points exist about JS part that I will say soon!_
 
 ### Designed by Mohammad Norouzi
 
