@@ -67,16 +67,11 @@ $o_db_t = '';
 
 if($o_db_t == ""){
 
-
 $result = get_sql_as_list('
 SELECT username,id,f_name,img_0,level,l_name,users_id,store_name,store_t_name,category_stores_id FROM `users` WHERE username= \''.$username.'\' AND password_hash =\''.$password.'\' 
 ');
-
-
 $users_r = json_decode($result);
-
 $_SESSION['users_r'] = $result;
-
 
 }else{
 

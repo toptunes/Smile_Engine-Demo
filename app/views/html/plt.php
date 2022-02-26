@@ -12,6 +12,9 @@ $o_db="";
 $nav="";
 $user_sign_up="";
 $locateat="";
+$username="";
+$password="";
+
 $start = microtime(true);
 set_time_limit(10);
 /*
@@ -26,20 +29,46 @@ define('24647ETW$@^&@%@%*#', TRUE);
 
 header('Content-Type: application/json');
 
-include "../../../CPU/fn.php";
+
+include "../../../CPU/fn.php"; //Load functions
+
 require "../../../autoload.php";
 
+
+
 $path = Get_ready_start::GetUrlQuery("q");
+
 $nav = Get_ready_start::GetUrlQuery("nav");
+
 $locateat = Get_ready_start::GetUrlQuery("locateat");
+
 $other_method = Get_ready_start::GetUrlQuery("o");
+
 $data = Get_ready_start::GetUrlJsonAsArray();
 
+$datacontent = Get_ready_start::Checkisset($data->datacontent,"1","");
 
-include "../../../CPU/get_ready.php";
-include "./switcher/routing.php";
-include "./switcher/database_global.php";
-include "./switcher/render_element_patterns.php";
+$s_case = Get_ready_start::Checkisset($data->s_case,"1","");
+
+$o_db = Get_ready_start::Checkisset($data->o_db,"1","");
+
+$datacontentsjson = Get_ready_start::Checkisset($datacontent,'{'.$datacontent.'}','{ "run":"1" }');
+
+$datacontents = Get_ready_start::Checkisset($datacontent,''.$datacontent.',','');
+
+$s_case = Get_ready_start::ifEmpty_Or_Null($path,"dash_page",$path);
+
+$tablename = Get_ready_start::GetinsideParenthesis($s_case,"1");
+
+$tablename = Get_ready_start::GetinsideParenthesis($s_case,"1");
+
+$s_case= str_replace("($tablename)", "",  $s_case);     
+
+include "./switcher/database_global.php"; // check and set Cookies
+
+
+
+
 
 
 
@@ -66,7 +95,9 @@ $app_nav = $switcher_index_obj -> getswitcher_nav($s_case,$not_user,$user_level,
 $app_nav = sanitize_output($app_nav);
 
 }else{
+
 $app_nav="";
+
 }
 
 $html_final = $switcher_index_obj -> getswitcher_case($s_case,$datacontentsjson,$tablename,$not_user,$user_level,$user_id,$o_db) ;
