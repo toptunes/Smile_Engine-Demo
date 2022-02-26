@@ -14,7 +14,9 @@ $user_sign_up="";
 $locateat="";
 $username="";
 $password="";
-
+$path ="";
+$r_path ="";
+$datacontent ="";
 $start = microtime(true);
 set_time_limit(10);
 /*
@@ -46,11 +48,12 @@ $other_method = Get_ready_start::GetUrlQuery("o");
 
 $data = Get_ready_start::GetUrlJsonAsArray();
 
-$datacontent = Get_ready_start::Checkisset($data->datacontent,"1","");
+$datacontent = isset($data->datacontent) ? Get_ready_start::Checkisset($data->datacontent,"1","") : "";
 
-$s_case = Get_ready_start::Checkisset($data->s_case,"1","");
+$s_case = isset($data->s_case) ? Get_ready_start::Checkisset($data->s_case,"1","") : "";
 
-$o_db = Get_ready_start::Checkisset($data->o_db,"1","");
+$o_db = isset($data->o_db) ? Get_ready_start::Checkisset($data->o_db,"1","") : "";
+
 
 $datacontentsjson = Get_ready_start::Checkisset($datacontent,'{'.$datacontent.'}','{ "run":"1" }');
 
@@ -63,18 +66,15 @@ $tablename = Get_ready_start::GetinsideParenthesis($s_case,"1");
 $tablename = Get_ready_start::GetinsideParenthesis($s_case,"1");
 
 $s_case= str_replace("($tablename)", "",  $s_case);     
-
-include "./switcher/database_global.php"; // check and set Cookies
-
-
-
-
+include "./switcher/routing.php";
+include "./switcher/render_element_patterns.php";
+include "./switcher/database_global.php"; // check and set COOKIE
 
 
 
 
 if($path == "mas"){
-    $nav =1;
+    
     include "./switcher/lanq_index.php";
     include "./switcher/security.php";
     include "./switcher/database_onstart.php";

@@ -3,9 +3,13 @@
 class Get_ready_start
 {
 
-    public static function GetUrlQuery($param){
+  
 
+
+    public static function GetUrlQuery($param){
        
+        $export = "";
+
         $export = htmlspecialchars(get_value($_GET,$param));
 
         return $export;
@@ -17,6 +21,8 @@ class Get_ready_start
 
     public static function GetUrlJsonAsArray(){
 
+        $json = "";
+
         $json = file_get_contents('php://input');
 
         return json_decode($json);
@@ -24,6 +30,8 @@ class Get_ready_start
     }
 
     public static function GetinsideParenthesis($param,$if_empty){
+
+        $export = "";
 
         preg_match('#\((.*?)\)#', $param, $match);
         $export = $match[1] ?? '';
@@ -36,6 +44,8 @@ class Get_ready_start
     }
     public static function ifEmpty_Or_Null($param,$if_empty,$orelse){
 
+        $export = "";
+
         if($param == "" || $param == "null"){
             $export = $if_empty;
         }else{
@@ -46,6 +56,8 @@ class Get_ready_start
     }
     public static function Checkisset($param,$put,$if_not){
 
+        $export = "";
+        
         if(isset($param)){
 
             if($put ==1)

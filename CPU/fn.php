@@ -403,6 +403,19 @@ function ifempty($type, $value)
     }
     return $export;
 }
+function ifemptyF($type)
+{
+
+    if ($type == "")
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+  
+}
 function ifnempty($type, $value)
 {
 

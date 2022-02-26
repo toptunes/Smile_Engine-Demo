@@ -2,7 +2,7 @@
 
 
 $routing_index = '{
-"my_ac":"profile",
+"load_example":"example",
 
 "account/dashboard":"profile",
 
@@ -12,16 +12,13 @@ $routing_index = '{
 $routing_t = json_decode($routing_index,true);
 
 
-$r_path = $routing_t[$path] ?? '';
-
-
-if($r_path != ""){
-$path = $r_path;  	
-}
+$s_case =get_value($routing_t,$s_case);
 
 
 
-// $_q1
+
+
+
 
     
    
