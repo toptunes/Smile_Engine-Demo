@@ -1456,7 +1456,6 @@ max-width:400px;
 
     height: 90%;
 }
-////////////////////////
 
 
 .h-line {
@@ -1532,7 +1531,6 @@ background: #35dc59 !important;
     color: #8e8e8e;
    
     font-size: smaller;
-//border-right: 1px solid #ebe9e9;
     padding: 10px;
 }
 .c_box{
@@ -1925,7 +1923,7 @@ nav#nav {
     -webkit-transition-duration: .3s;
     transition-duration: .3s;
     overflow: hidden;
-    color: #77b868 !important
+    color: #77b868 !important;
     position: relative;
 }
 .tab-link i {
