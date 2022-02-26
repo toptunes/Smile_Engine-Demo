@@ -78,7 +78,6 @@ Online Demo : http://app.abyekiha.com/
 _Login into the panel with this number: 09354894522_
 
 
-### If you are a programmer, let's make this project great by sharing your knowledge
 
 
 
