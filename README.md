@@ -49,10 +49,10 @@ If you want to use JSON you should learn how to make preload modules
 
 ```
 
-5 - If you use XAMPP, open http://127.0.0.1/example (you can see module)
+5 - If you use XAMPP, open http://127.0.0.1/example (you can see Module)
 
 
-6 - Smile Engine can work with object-oriented programming but modules are like objects. try to use it functional programming
+6 - Smile Engine can work with object-oriented programming but modules are like objects. try to use it functional 
 
 7 - you can change URL routing by changing the array in : ```app/views/html/switcher/routing.php```
 
