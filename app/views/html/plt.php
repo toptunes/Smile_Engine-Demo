@@ -125,7 +125,7 @@ $time_elapsed_secs = microtime(true) - $start;
 $memoryend = round(memory_get_usage()/1048576,2).''.' MB';
 
 
-$fin_method = $method_select[''.$other_method.''] ?? '';
+$fin_method = get_value($method_select,$other_method);
 
 echo '{"method_fill":"'.$fin_method.'", "elementbox" : "'.$locateat.'" , "case" : "'.$s_case.'" , "Access":"'.$other_method.'", "path":"'.$path.'", "app_msg":"'.$html_msg.'", "app_data":'.$html_final.', "password":"", "username":"" ,"app_nav":'.$app_nav.',"el":"'.$el1.'","el2":"'.$el2.'" ,"el3":"'.$el3.'" ,"time_elapsed_secs":"'.$time_elapsed_secs.'" ,"memorys":"'.$memorystart.'" ,"memorye":"'.$memoryend.'" }';
 

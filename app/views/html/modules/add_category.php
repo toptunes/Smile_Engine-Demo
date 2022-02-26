@@ -1,13 +1,29 @@
 <?php
+/* 
+_______________
+
+If you want to see this open the link => localhost/add_category  OR yourdomain.com/add_category  OR http://127.0.0.1/add_category
+_______________ 
+*/
+
+/*
+_______________
+
+the first parameter is 3. which means this module is only for users with level 3 ( check the user table in MySQL )
+
 $Access_p=Access_permission("3",$this->user_level,$this->not_user);
 
+_______________
+*/
 
-//$add_city_data = (Array)json_decode(get_mysql("SELECT * FROM `city_all`  limit 7"))[0];
+
 
 include 'child/loop/child_loop_category_name_list.php';
 
 
-$html_final = preload('div','add_category','
+
+
+$html_final = module('div','add_category','
 
 
 <div class="container fade-in mb-5">
@@ -16,7 +32,7 @@ $html_final = preload('div','add_category','
          <div class="col-md-4 offset-md-4">
             <div class="login-form bg-light mt-4 p-4">
                <form class="row g-3">
-                  <h4>به لیست دسته بندی های سایت اضافه کنید</h4>
+                  <h4>HTML</h4>
                   <div class="col-12">
                      <input class="form-control input_m_form jm" type="text" data-req="1" name="category_name" autocomplete="off" placeholder="">
                   </div>
@@ -50,6 +66,13 @@ $html_final = preload('div','add_category','
             
 
 ');
+
+/*
+Use this link to run The module on click
+
+<a href="/add_category" id="fill_it" data-query="fill_it&o=2&module_name=fill_user_sign_up" class="btn_id">Link name</a>
+
+*/
 
 
 ?>

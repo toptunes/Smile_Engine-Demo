@@ -13,11 +13,13 @@ $child_side_bar_menu = child('div','child_side_bar_menu','
         </div>
         <div class="offcanvas-body">
 
+        
+
 		
             <ul id="accordion" class="list-group">
                 <li class="list-group-item">
                     <a class="btn clr_night" data-bs-toggle="collapse" href="#collapseOne" >
-                        کالای دیجیتال
+                      Example
                     </a>
                     <div id="collapseOne" class="collapse" data-bs-parent="#accordion" >
                         <div class="card-body">
@@ -27,33 +29,33 @@ $child_side_bar_menu = child('div','child_side_bar_menu','
                             <ul id="accordion_2" class="list-group">
                                 <li class="list-group-item border border-0 pe-4">
                                     <a class="btn clr_night" data-bs-toggle="collapse" href="#collapseOneOne" >
-                                        گوشی موبایل
+                                        Example
                                     </a>
                                     <div id="collapseOneOne" class="collapse" data-bs-parent="#accordion_2">
                                         <ul class="list-group">
                                             <li class="list-group-item border border-0 pe-4" data-bs-dismiss="offcanvas">
-                                                سامسونگ
+                                                Example
                                             </li>
                                             <li class="list-group-item border border-0 pe-4">
-                                                اپل
+                                                Example
                                             </li>
                                             <li class="list-group-item border border-0 pe-4">
-                                                شیائومی
+                                                Example
                                             </li>
                                             <li class="list-group-item border border-0 pe-4">
-                                                هوآوی
+                                                Example 
                                             </li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li class="list-group-item border border-0 pe-4">
                                     <a class="btn clr_night" data-bs-toggle="collapse" href="#collapseOneTwo" aria-expanded="false">
-                                        لوازم جانبی گوشی
+                                        Example   
                                     </a>
                                     <div id="collapseOneTwo" class="collapse" data-bs-parent="#accordion_2">
                                         <ul class="list-group">
                                             <li class="list-group-item">
-                                                پاوربانک
+                                                Example
                                             </li>
                                         </ul>
                                     </div>
@@ -65,25 +67,25 @@ $child_side_bar_menu = child('div','child_side_bar_menu','
                                     <div id="collapseOneThree" class="collapse" data-bs-parent="#accordion_2">
                                         <ul class="list-group">
                                             <li class="list-group-item">
-                                                دوربین عکاسی دیجیتال
+                                                Example
                                             </li>
                                             <li class="list-group-item">
-                                                سونی
+                                                Example
                                             </li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li class="list-group-item border border-0 pe-4">
                                     <a class="btn clr_night" data-bs-toggle="collapse" href="#collapseOneFour">
-                                        لوازم جانبی دوربین
+                                        Example
                                     </a>
                                     <div id="collapseOneFour" class="collapse" data-bs-parent="#accordion_2">
                                         <ul class="list-group">
                                             <li class="list-group-item">
-                                                فلان
+                                                Example
                                             </li>
                                             <li class="list-group-item">
-                                                فلان
+                                                Example
                                             </li>
                                         </ul>
                                     </div>
@@ -94,7 +96,7 @@ $child_side_bar_menu = child('div','child_side_bar_menu','
                 </li>
                 <li class="list-group-item">
                     <a class="btn clr_night" data-bs-toggle="collapse" href="#collapsetwo">
-                        خودرو ، ابزار و تجهیزات صنعتی
+                        Example
                     </a>
                     <div id="collapsetwo" class="collapse" data-bs-parent="#accordion">
                         <div class="card-body">
@@ -109,7 +111,7 @@ $child_side_bar_menu = child('div','child_side_bar_menu','
                 </li>
                 <li class="list-group-item">
                     <a class="btn clr_night" data-bs-toggle="collapse" href="#collapsethree">
-                        مد و پوشاک
+                        Example
                     </a>
                     <div id="collapsethree" class="collapse" data-bs-parent="#accordion">
                         <div class="card-body">
@@ -124,7 +126,7 @@ $child_side_bar_menu = child('div','child_side_bar_menu','
                 </li>
                 <li class="list-group-item">
                     <a class="btn clr_night" data-bs-toggle="collapse" href="#collapsefour">
-                        اسباب بازی ، کودک و نوزاد
+                        Example
                     </a>
                     <div id="collapsefour" class="collapse" data-bs-parent="#accordion">
                         <div class="card-body">
@@ -139,7 +141,7 @@ $child_side_bar_menu = child('div','child_side_bar_menu','
                 </li>
                 <li class="list-group-item">
                     <a class="btn clr_night" data-bs-toggle="collapse" href="#collapsefive">
-                        کالاهای سوپرمارکتی
+                        Example
                     </a>
                     <div id="collapsefive" class="collapse" data-bs-parent="#accordion">
                         <div class="card-body">
@@ -154,7 +156,7 @@ $child_side_bar_menu = child('div','child_side_bar_menu','
                 </li>
                 <li class="list-group-item">
                     <a class="btn clr_night" data-bs-toggle="collapse" href="#collapsesix">
-                        زیبایی و سلامت
+                        Example
                     </a>
                     <div id="collapsesix" class="collapse" data-bs-parent="#accordion">
                         <div class="card-body">
@@ -169,7 +171,7 @@ $child_side_bar_menu = child('div','child_side_bar_menu','
                 </li>
                 <li class="list-group-item">
                     <a class="btn clr_night" data-bs-toggle="collapse" href="#collapseseven">
-                        خانه و آشپزخانه
+                        Example
                     </a>
                     <div id="collapseseven" class="collapse" data-bs-parent="#accordion">
                         <div class="card-body">
@@ -184,7 +186,7 @@ $child_side_bar_menu = child('div','child_side_bar_menu','
                 </li>
                 <li class="list-group-item">
                     <a class="btn clr_night" data-bs-toggle="collapse" href="#collapseeight">
-                        کتاب ، لوازم التحریر و هنر
+                        Example
                     </a>
                     <div id="collapseeight" class="collapse" data-bs-parent="#accordion">
                         <div class="card-body">
@@ -199,7 +201,7 @@ $child_side_bar_menu = child('div','child_side_bar_menu','
                 </li>
                 <li class="list-group-item">
                     <a class="btn clr_night" data-bs-toggle="collapse" href="#collapsenine">
-                        ورزش و سفر
+                        Example
                     </a>
                     <div id="collapsenine" class="collapse" data-bs-parent="#accordion">
                         <div class="card-body">
@@ -214,7 +216,7 @@ $child_side_bar_menu = child('div','child_side_bar_menu','
                 </li>
                 <li class="list-group-item">
                     <a class="btn clr_night" data-bs-toggle="collapse" href="#collapseOne">
-                        محصولات بومی و محلی
+                        Example
                     </a>
                     <div id="collapseOne" class="collapse" data-bs-parent="#accordion">
                         <div class="card-body">
