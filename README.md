@@ -65,7 +65,7 @@ _If you know core PHP you already know how to use SmileEngine, but some points e
 > We will make a lot of modules as a PHP file. But on per request will load one or maximum 5 child modules.  
 > If you have the experience, you can make preload modules.  
 > This Framework is suited for functional programmers that want to make easy scalable projects  
-> You can't Define the function inside modules. either Do procedural programming or make a function on_ CPU/fn.php _and Do functional  
+> You can't Define the function inside modules. either Do procedural programming or make a function on_ CPU/fn.php _  
 > All existing modules are an example and are not part of the framework  
 
 ### Links
