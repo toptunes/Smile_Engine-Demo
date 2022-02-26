@@ -1,8 +1,5 @@
 <?php
-if (!defined('24647ETW$@^&@%@%*#'))
-{
-    die('error 24');
-}
+
 
 function get_sql_as_list($sql)
 {
@@ -389,7 +386,19 @@ function ifndef($type, $value)
     }
     return $export;
 }
+function ifempty_self($type, $value)
+{
 
+    if ($type == "")
+    {
+        $export = $value;
+    }
+    else
+    {
+        $export = $type;
+    }
+    return $export;
+}
 function ifempty($type, $value)
 {
 

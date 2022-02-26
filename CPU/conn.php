@@ -1,8 +1,4 @@
 <?php
-if (!defined('24647ETW$@^&@%@%*#'))
-{
-    die('error 24');
-}
 
 
 class conn

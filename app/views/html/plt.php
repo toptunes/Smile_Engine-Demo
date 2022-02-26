@@ -27,8 +27,6 @@ ini_set('display_startup_errors', 1);
 
 ini_set('display_errors', 0);
 
-define('24647ETW$@^&@%@%*#', TRUE);
-
 header('Content-Type: application/json');
 
 
@@ -91,8 +89,8 @@ $switcher_index_obj = new switcher_index();
 
 if($nav==1){
     
-$app_nav = $switcher_index_obj -> getswitcher_nav($s_case,$not_user,$user_level,$user_id,$o_db) ;
-$app_nav = sanitize_output($app_nav);
+$app_nav = sanitize_output($switcher_index_obj -> getswitcher_nav($s_case,$not_user,$user_level,$user_id,$o_db)) ;
+
 
 }else{
 
@@ -100,9 +98,9 @@ $app_nav="";
 
 }
 
-$html_final = $switcher_index_obj -> getswitcher_case($s_case,$datacontentsjson,$tablename,$not_user,$user_level,$user_id,$o_db) ;
+$html_final = sanitize_output($switcher_index_obj -> getswitcher_case($s_case,$datacontentsjson,$tablename,$not_user,$user_level,$user_id,$o_db));
 
-$html_final = sanitize_output($html_final);
+
 /*$html_final=rawUrlEncode($html_final);*/
 
 

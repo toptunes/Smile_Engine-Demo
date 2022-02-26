@@ -1,8 +1,5 @@
 <?php
 
-if(!defined('24647ETW$@^&@%@%*#')) {
-   die('error 24');
-}
 
 $memory_size = memory_get_usage();
 

@@ -1,9 +1,5 @@
 <?php
 // get $set_to_switcher from modules
-if (!defined('24647ETW$@^&@%@%*#'))
-{
-    die('error 24');
-}
 
 class switcher_index
 {
