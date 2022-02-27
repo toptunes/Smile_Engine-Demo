@@ -58,7 +58,8 @@ class switcher_index
             }
 
         }
-
+        $preload_html="";
+        $html_final="";
         include "./modules/" . $this->switcher_case . ".php";
 
         $html_final = str_ireplace($findkey, $replacevalue, $html_final);

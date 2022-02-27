@@ -1,5 +1,12 @@
 <?php
 
+
+$uniques_patterns = "";
+
+if($this->data_string != "{}"){
+
+
+
 $insert_data = json_decode($this->data_string);
 
 $uniques_patterns_index = '{
@@ -30,7 +37,7 @@ $uniques_patterns = json_decode($uniques_patterns_index,true);
 
      
                          
-                         
+}      
                          
                          
                          
