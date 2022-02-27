@@ -70,7 +70,9 @@ class Final_render
         $tablename = Get_ready_start::GetinsideParenthesis($s_case,"1");
 
         $s_case= str_replace("($tablename)", "",  $s_case);     
+
         include "./switcher/routing.php";
+    
         include "./switcher/render_element_patterns.php";
         include "./switcher/database_global.php"; // check and set COOKIE
 

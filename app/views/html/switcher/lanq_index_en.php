@@ -2,32 +2,27 @@
 
 
 
-$list_lanq_index = '{
-"Access_denied":"Access denied",
-"dashboard_home":"Home",
-"data_Search":"Search . . . ",
-"staff_FirstName":"First Name",
-"staff_LastName":"Last Name",
-"staff_personPost":"Person Post",
-"staff_OfficePhoneNo":"Office Phone No",
-"staff_StartDate":"Start Date",
-"staff_EndDate":"End Date",
-"city_name":"City Name",
-"sign_up":"sign up",
-"sign_up_title":"sign up title",
-"enter_country_name":"enter your country name",
+$read_t = [
+"Access_denied" => "Access denied",
+"dashboard_home" => "Home",
+"data_Search" => "Search . . . ",
+"staff_FirstName" => "First Name",
+"staff_LastName" => "Last Name",
+"staff_personPost" => "Person Post",
+"staff_OfficePhoneNo" => "Office Phone No",
+"staff_StartDate" => "Start Date",
+"staff_EndDate" => "End Date",
+"city_name" => "City Name",
+"sign_up" => "sign up",
+"sign_up_title" => "sign up title",
+"enter_country_name" => "enter your country name"
+
+
+];
 
 
 
 
-"opId":"134"}';
-
-
-
-
-$read_t = json_decode($list_lanq_index,true);
-
-  
 
 $data_name_list = Array
 (

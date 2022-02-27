@@ -23,6 +23,7 @@ include 'child/loop/child_loop_category_name_list.php';
 
 
 
+
 $html_final = module('div','add_category','
 
 
@@ -34,6 +35,7 @@ $html_final = module('div','add_category','
                <form class="row g-3">
                   <h4>HTML</h4>
                   <div class="col-12">
+               
                      <input class="form-control input_m_form jm" type="text" data-req="1" name="category_name" autocomplete="off" placeholder="">
                   </div>
                   <div class="col-12">

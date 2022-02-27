@@ -42,56 +42,53 @@ $get_loop_data .= child('div','get_loop_data','
 <div class=" border-bottom  m-2 ">
 
 
-<div class="card-header border row">
+    <div class="card-header border row">
 
-<div class="col-6 ">
-<div>شناسه  '.$obj['product_id'].' </div>
+        <div class="col-6 ">
+        <div>شناسه  '.$obj['product_id'].' </div>
+        </div>
+
+
+        <div class="d-flex justify-content-end col-6 btn_id close_x" id="open_inside" data-query="open_inside&module_name=remove_cart&when='.get_value($obj,'all_orders_id').'&p_name='.get_value($obj,'product_name').'&p_id='.get_value($obj,'product_id').'" locate-at="idoflocation" at-end="run_s_pop" >
+        <i class="fa text-danger fa-window-close h3"></i>
+        </div>
+
+
+
+        </div>
+
+
+
+
+        <div class="bg-light border 
+        row d-flex justify-content-between">
+
+        <div class="row col-8 ">
+        <p class="col-6  p-2">'.$obj['product_name'].' '.$obj['brand_name'].' '.$obj['product_model'].'
+        </p>
+        <p class="col-6   p-2">'.$obj['how_many_wanted'].' عدد
+        </p>
+        <p class="col-6  p-2">
+
+        قیمت  '.$obj['product_off_price'].'
+        </p> 
+        <p class="col-6  p-2">
+        '.ifnzero(get_value($obj,'color_name'),'
+        رنگ '.get_value($obj,'color_name').'
+        <span class="off-percent text-light m-1 rounded-pill mx-2 d-flex" style="width: 20px; height: 20px; background:'.get_value($obj,'color_code').'"></span>  
+        ').'  
+        </p> 
+
+        </div> 
+
+
+        <div class="row col-4 d-flex justify-content-end">
+        <div class="d-flex justify-content-end">
+        <img src="/upload/image/show.php?name='.get_value($obj,'products_img_0').'&width=125" alt="aaa" class="rounded w-product w-100 my-3 img_fit_140">
+        </div>
+    </div>
+    </div>
 </div>
-
-
-<div class="d-flex justify-content-end col-6 btn_id close_x" id="open_inside" data-query="open_inside&module_name=remove_cart&when='.get_value($obj,'all_orders_id').'&p_name='.get_value($obj,'product_name').'&p_id='.get_value($obj,'product_id').'" locate-at="idoflocation" at-end="run_s_pop" >
-<i class="fa text-danger fa-window-close h3"></i>
-</div>
-
-
-
-</div>
-
-
-
-
-<div class="bg-light border 
-row d-flex justify-content-between">
-
-<div class="row col-8 ">
-<p class="col-6  p-2">'.$obj['product_name'].' '.$obj['brand_name'].' '.$obj['product_model'].'
-</p>
-<p class="col-6   p-2">'.$obj['how_many_wanted'].' عدد
-</p>
-<p class="col-6  p-2">
-
-قیمت  '.$obj['product_off_price'].'
-</p> 
-<p class="col-6  p-2">
- '.ifnzero(get_value($obj,'color_name'),'
- رنگ '.get_value($obj,'color_name').'
-<span class="off-percent text-light m-1 rounded-pill mx-2 d-flex" style="width: 20px; height: 20px; background:'.get_value($obj,'color_code').'"></span>  
- ').'  
-</p> 
-
-</div> 
-
-
-<div class="row col-4 d-flex justify-content-end">
-<div class="d-flex justify-content-end">
-<img src="/upload/image/show.php?name='.get_value($obj,'products_img_0').'&width=125" alt="aaa" class="rounded w-product w-100 my-3 img_fit_140">
-</div>
-</div>
-
-
-
-  </div>
-  </div>
 
 
   

@@ -90,18 +90,15 @@ if( $o_db_t == ""){
 
 
 
+$obj = (Array)$users_r[0] ?? '';
 
+$user_id= $obj["id"] ?? '';
+$user_level= $obj["level"] ?? '';
+$user_category_stores= $obj["category_stores"] ?? '';
+if($user_id  == ""){
+    $not_user =1;
 
-
-    $obj = (Array)$users_r[0] ?? '';
-
-    $user_id= $obj["id"] ?? '';
-    $user_level= $obj["level"] ?? '';
-    $user_category_stores= $obj["category_stores"] ?? '';
-        if($user_id  == ""){
-            $not_user =1;
-                
-        }else{
-            $not_user =0;	
-        }	
+}else{
+    $not_user =0;	
+}	
 

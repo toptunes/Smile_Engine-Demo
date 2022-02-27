@@ -19,6 +19,8 @@ class Get_ready_start
 
     }
 
+ 
+
     public static function GetUrlJsonAsArray(){
 
         $json = "";
@@ -30,7 +32,7 @@ class Get_ready_start
         return json_decode($json);
        
     }
-
+    
     public static function GetinsideParenthesis($param,$if_empty){
 
         $export = "";
