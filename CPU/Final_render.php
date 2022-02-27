@@ -28,7 +28,7 @@ class Final_render
 
         $memorystart =  round(memory_get_usage()/1048576,2).''.' MB';
 
-        $data = Get_ready_start::GetUrlJsonAsArray();
+       
 
         $preload_html="";
         $html_final="";
@@ -47,10 +47,12 @@ class Final_render
         $r_path ="";
         $datacontent ="";
         $start = microtime(true);
- 
-        
 
+        $data = Get_ready_start::GetUrlJsonAsArray();
+        
+        
         $datacontent = isset($data->datacontent) ? Get_ready_start::Checkisset($data->datacontent,"1","") : "";
+        
 
         $s_case = isset($data->s_case) ? Get_ready_start::Checkisset($data->s_case,"1","") : "";
 
@@ -58,12 +60,12 @@ class Final_render
 
 
         $datacontentsjson = Get_ready_start::Checkisset($datacontent,'{'.$datacontent.'}','{ "run":"1" }');
+      
 
         $datacontents = Get_ready_start::Checkisset($datacontent,''.$datacontent.',','');
+        
 
         $s_case = Get_ready_start::ifEmpty_Or_Null($this->path,"dash_page",$this->path);
-
-        $tablename = Get_ready_start::GetinsideParenthesis($s_case,"1");
 
         $tablename = Get_ready_start::GetinsideParenthesis($s_case,"1");
 

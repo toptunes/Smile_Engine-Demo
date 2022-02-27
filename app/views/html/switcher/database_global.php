@@ -69,7 +69,7 @@ if(isset($_SESSION['users_r'])){
 
 
 
-if(isset($o_db_t) && $o_db_t == ""){
+if( $o_db_t == ""){
 
 
     $result = get_sql_as_list('
@@ -91,7 +91,6 @@ if(isset($o_db_t) && $o_db_t == ""){
 
 
 
-if(isset($users_r)){
 
 
     $obj = (Array)$users_r[0] ?? '';
@@ -106,4 +105,3 @@ if(isset($users_r)){
             $not_user =0;	
         }	
 
-}
