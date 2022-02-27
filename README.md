@@ -3,7 +3,7 @@ Smile Engine
 
 Smile Engine is a Full-stack PWA javascript and works with PHP
 
-
+_A php framework for functional programmer._
 
 ### Install & Usage
 
@@ -49,7 +49,7 @@ If you want to use JSON you should learn how to make preload modules
 
 ```
 
-5 - If you use XAMPP, open http://127.0.0.1/example (you can see Module)
+5 - If you use XAMPP, open http://127.0.0.1/example (you can see the module)
 
 
 6 - Smile Engine can work with object-oriented programming but modules are like objects. try to use it functional 
@@ -58,16 +58,14 @@ If you want to use JSON you should learn how to make preload modules
 
 ### tutorials
 
-_tutorials is coming soon._
+_If you know core PHP you already know how to use SmileEngine, but some points exist about JS part that I will say soon!_
 
 ### Designed by Mohammad Norouzi
 
-> It's up to you how to make modules. Complete Client-side render without knowing javascript OR half client-side render.  
 > We will make a lot of modules as a PHP file. But on per request will load one or maximum 5 child modules.  
 > If you have the experience, you can make preload modules.  
-> many "include" files will replace on release version (automatically)  
 > This Framework is suited for functional programmers that want to make easy scalable projects  
-> You can't Define the function inside modules. either Do procedural programming or make a function on_ CPU/fn.php _and Do functional  
+> You can't Define the function inside modules. either Do procedural programming or make a function on_ CPU/fn.php _  
 > All existing modules are an example and are not part of the framework  
 
 ### Links
