@@ -30,13 +30,13 @@ https://github.com/toptunes/Smile_Engine-Demo/blob/master/database_name.sql
 
 3 - Almost All php files in ```app/views/html/modules/``` is an examples.
 
-4 - Make a new file ```example.php``` in ```/modules/``` . And copy this code below.
+4 - Make a new file ```your_module_name.php``` in ```/modules/``` . And copy this code below.
 
 ```php
 <?php
 
 
-$html_final = module('div','example','
+$html_final = module('div','your_module_name','
 
 Here you can write HTML, JSON, or just write hello world
 
@@ -49,7 +49,7 @@ If you want to use JSON you should learn how to make preload modules
 
 ```
 
-5 - If you use XAMPP, open http://127.0.0.1/example (you can see the module)
+5 - If you use XAMPP, open http://127.0.0.1/your_module_name (you can see the module)
 
 
 6 - Smile Engine can work with object-oriented programming but modules are like objects. try to use it functional 
