@@ -1,7 +1,7 @@
 Smile Engine
 =======
 
-Smile Engine is a Full-stack PWA javascript and works with PHP
+Smile Engine is a new kind of wheel.  hashtag#High_performance ,  hashtag#Scalable , and  hashtag#full_stack   hashtag#PHP / hashtag#js   hashtag#framework . Smile Engine works  hashtag#functional  and  hashtag#modular  only for  hashtag#PWA
 
 _A php/js framework for functional programmer._
 
