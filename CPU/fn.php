@@ -359,6 +359,19 @@ function ifdef($type, $value)
     return $export;
 }
 
+function ifequal($param1, $param2 ,$data)
+{
+    if ($param1 == $param2)
+    {
+        $export = $data;
+    }
+    else
+    {
+        $export = "";
+    }
+    return $export;
+}
+
 function ifnzero($type, $value)
 {
     if ($type != "0" || $type != 0)
