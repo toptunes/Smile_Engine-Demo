@@ -3,7 +3,7 @@ Smile Engine
 
 Smile Engine is a new kind of wheel. High Performance, Scalable, and full-stack PHP / js framework. Smile Engine works functional and modular only for PWA
 
-_A php/js framework for functional programmer._
+
 
 ### Install & Usage
 
@@ -52,9 +52,7 @@ If you want to use JSON you should learn how to make preload modules
 5 - If you use XAMPP, open http://127.0.0.1/your_module_name (you can see the module)
 
 
-6 - Smile Engine can work with object-oriented programming but modules are like objects. try to use it functional 
-
-7 - you can change URL routing by changing the array in : ```app/views/html/switcher/routing.php```
+6 - you can change URL routing by changing the array in : ```app/views/html/switcher/routing.php```
 
 ### tutorials
 
