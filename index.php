@@ -21,8 +21,10 @@
    <script src="/app/scripts/smi_lee.js"></script>
    <script src="/app/scripts/nids.js"></script>
    <script src="/app/scripts/app.js.php"></script>
+   <script src="/app/phaser-3.55.2/dist/phaser.js" defer></script>
+  
    <?php
-      //include "./app/scripts/threejs_codes.php";
+      //include "./app/scripts/phaser_codes.php";
    ?>
    <script>
       jalaliDatepicker.startWatch({

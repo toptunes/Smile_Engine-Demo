@@ -1,13 +1,10 @@
 <?php
 
+$json="
+hello
 
+";
 
+$html_final= preload('div','example',$json);
 
-
-
-$html_final= module('div','dash_page','
-
-Hello WORLD
-
-
-');
+?>

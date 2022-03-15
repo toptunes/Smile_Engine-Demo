@@ -2,3 +2,5 @@
 .phedlog
 .phedhistory
 node_modules/
+app/phaser-3.55.2/
+2d game/
