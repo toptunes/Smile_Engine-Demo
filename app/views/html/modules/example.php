@@ -1,8 +1,7 @@
 <?php
 
 $json="
-hello
-
+HELLO FROM example.php
 ";
 
 $html_final= preload('div','example',$json);
