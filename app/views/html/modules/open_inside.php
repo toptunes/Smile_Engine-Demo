@@ -8,7 +8,4 @@ include "$valueof2.php";
 $valueof = str_replace("/","_",$valueof2);
 
 
-$html_final = module('div',''.$valueof.'','
-
-'.${$valueof}.'
-');
+$html_final = module('div',''.$valueof.'',${$valueof});

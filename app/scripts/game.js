@@ -1,12 +1,12 @@
 let game_is_run = false;
 
 
-function child_on_init(){
-
+function child_on_init(param){
+alert(param);
 }
 
 function config_game(){
-    
+
     var config = {
         type: Phaser.AUTO,
         width: 800,

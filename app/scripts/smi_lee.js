@@ -727,12 +727,13 @@ function clear_loading() {
 function do_after_done(result, whatafterrun) {
     clear_loading();
 
-
+ 
 
     const text = result;
     const obj = JSON.parse(JSON.stringify(text));
 
-
+   
+  
 
     nav_builder(dear_nav, obj.app_nav);
 
@@ -748,7 +749,7 @@ function do_after_done(result, whatafterrun) {
         if (obj.elementbox !== "") {
 
             if (document.getElementById(obj.elementbox).className.includes('dear_element')) {
-
+                    
                 just_put_it_located(decodeURIComponent(calc_data), obj.elementbox);
 
             } else {
@@ -757,8 +758,10 @@ function do_after_done(result, whatafterrun) {
 
         } else {
 
-
-            just_put_it(calc_data, dear_app);
+            if(obj.case != "open_json"){
+                just_put_it(calc_data, dear_app);
+            }
+            
 
 
         }
@@ -776,9 +779,9 @@ function do_after_done(result, whatafterrun) {
 
     } else {
 
+        
         fill_after_done(obj.Access, obj.app_data, obj.method_fill);
-
-
+       
     }
 
 
@@ -788,12 +791,13 @@ function do_after_done(result, whatafterrun) {
 
     if (whatafterrun != null) {
         if (whatafterrun.includes(";")) {
-            namm = whatafterrun.split(';')[0];
-            parr = whatafterrun.split(';')[1];
-            window[namm](whatafterrun.split(';')[1], whatafterrun.split(';')[2], whatafterrun.split(';')[3], whatafterrun.split(';')[4], whatafterrun.split(';')[5], whatafterrun.split(';')[6]);
+
+            let full_array = whatafterrun.split(';');
+          
+            window[full_array[0]](full_array);
         } else {
             var data = 1;
-            window[whatafterrun](data);
+            window[whatafterrun](obj.app_data);
         }
     }
 

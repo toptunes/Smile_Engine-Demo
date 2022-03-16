@@ -7,6 +7,4 @@ include 'admin/'.$valueof.'.php';
 
 
 
-$html_final = module('div',''.$valueof.'','
-'.${$valueof}.'
-');
+$html_final = module('div',''.$valueof.'',${$valueof});
