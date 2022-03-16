@@ -4,3 +4,6 @@
 node_modules/
 app/phaser-3.55.2/
 2d game/
+app/views/html/modules/game/
+
+app/views/html/modules/open_game.php

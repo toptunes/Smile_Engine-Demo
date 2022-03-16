@@ -25,6 +25,14 @@ $child_header_not_login= child('div','child_header_not_login','
 		</a>
 	</li>	
   
+  <li class="nav-item">
+	<a  href="/open_game" id="example" data-query="open_game&module_name=child_on_init" at-end="child_on_init" class="nav-link btn_id">
+		 test
+		</a>
+	</li>	
+  
+
+
           </ul>
 
 
