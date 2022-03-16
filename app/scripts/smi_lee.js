@@ -759,7 +759,11 @@ function do_after_done(result, whatafterrun) {
         } else {
 
             if(obj.case != "open_json"){
+                
                 just_put_it(calc_data, dear_app);
+            }else{
+                document.getElementById(dear_app).innerHTML='';
+
             }
             
 
