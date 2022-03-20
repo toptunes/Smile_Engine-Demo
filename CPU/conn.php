@@ -18,6 +18,7 @@ class conn
 
     public function getDBready()
     {
+          //Connect to mysql - user password database config
 
         $this->servername = "localhost";
         $this->username = "root";
@@ -50,6 +51,9 @@ class conn
 
     public function read_sql($sql)
     {
+
+          //Get $sql from mysqli
+
         mysqli_query($this->conn, "SET NAMES utf8");
 
         $result = $this->conn->query($sql);
@@ -70,6 +74,9 @@ class conn
 
     public function insert_sql($sql)
     {
+
+        //Execute $sql on mysqli
+
 
         mysqli_query($this->conn, "SET NAMES utf8");
 
