@@ -8,18 +8,10 @@
 
 </head>
 <body>
-   <keep-alive id="app">
-      <router-view v-bind:app="app">
-      </router-view>
-   </keep-alive>
+   <div id="app"></div>
    <div id="error_found"></div>
    <div id="dab-sidebar-overlay"></div>
    <script src="/app/scripts/smi_lee.js"></script>
-   <script src="/app/scripts/nids.js"></script>
-   <script src="/app/scripts/js.js"></script>
-   <?php
-      //include "./app/scripts/phaser_codes.php";
-   ?>
    <script>
       jalaliDatepicker.startWatch({
           separatorChar: "/",
