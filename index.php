@@ -16,7 +16,7 @@
    <div id="dab-sidebar-overlay"></div>
    <script src="/app/scripts/smi_lee.js"></script>
    <script src="/app/scripts/nids.js"></script>
-   <script src="/app/scripts/app.js.php"></script>
+   <script src="/app/scripts/js.js"></script>
    <?php
       //include "./app/scripts/phaser_codes.php";
    ?>

@@ -9,7 +9,7 @@ window.appFrames = {};
 window.appViews = {};
 
 window.appViews.view1 = Vue.component("view1", function (resolve, reject) {
-  jQuery.get("/app/views/html/view.html", function (response) {
+  jQuery.get("/app/views/html/mohammad_norouzi_app.php", function (response) {
     resolve({
       props: ["app"],
       template: response,
@@ -1044,7 +1044,7 @@ fetch(app.store.devicePlatform+'/'+whatfor, {
 do_onstart(data);
 
   })
-  .catch((err) => console.log(err));
+  .catch((err) => get_error(app.store.devicePlatform+'/'+whatfor));
 
 
 
