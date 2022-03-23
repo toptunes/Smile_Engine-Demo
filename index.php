@@ -5,11 +5,7 @@
    ?>
 <link type="text/css" rel="stylesheet" href="/app/styles/toptunes.ir_app_1.css" />
 <link type="text/css" rel="stylesheet" href="/app/styles/custom.css" />
-<script>
-    if(/MSIE/i['test'](navigator['userAgent'])==true||/rv/i['test'](navigator['userAgent'])==true||/Edge/i['test'](navigator['userAgent'])==true){
-            alert("Please Update your browser! / مرورگر خود را بروز رسانی کنید");
-   }
-</script>
+
 </head>
 <body>
    <keep-alive id="app">
