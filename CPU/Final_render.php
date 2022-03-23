@@ -45,7 +45,7 @@ class Final_render
         $user_id = 0;
         $username="";
         $password="";
-    
+       
         $r_path ="";
         $datacontent ="";
         $start = microtime(true);
