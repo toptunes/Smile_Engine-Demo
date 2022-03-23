@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+$o_db_t="";
+
 if(isset($data->username) && isset($data->password)){
 
     unset($_SESSION['users_r']);
@@ -89,16 +91,23 @@ if( $o_db_t == ""){
 }
 
 
+if($users_r != null){
 
-$obj = (Array)$users_r[0] ?? '';
+    $obj = (Array)$users_r[0] ?? '';
+
+}
 
 $user_id= $obj["id"] ?? '';
 $user_level= $obj["level"] ?? '';
 $user_category_stores= $obj["category_stores"] ?? '';
+
 if($user_id  == ""){
+
     $not_user =1;
 
 }else{
+
     $not_user =0;	
+    
 }	
 
