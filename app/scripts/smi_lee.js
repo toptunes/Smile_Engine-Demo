@@ -28,6 +28,37 @@ setVar('devicePlatform', '/app/views/html');
 
 on_app_RUN(store.devicePlatform + "/mohammad_norouzi_app.php"); // Run application
 
+
+
+function meta_builder(obj){
+
+    var title = obj.inside_head.title;
+   
+   
+       
+        document.title = title;
+    
+
+    var meta_obj = obj.inside_head.meta_name;
+    
+
+    for (let index = 0; index < meta_obj.length; index++) {
+
+        for (var key in meta_obj[index]) {
+            if (meta_obj[index].hasOwnProperty(key)) {
+
+
+                document.querySelector("meta["+key+"]" ).setAttribute("content", meta_obj[index][key]);
+
+            }
+        }
+    }
+  
+  
+}
+
+
+
 function setOption(key, value) {
     return localStorage.setItem(key, value);
 }
@@ -797,8 +828,11 @@ function do_after_done(result, whatafterrun) {
 
 
 
-
+    
+    meta_builder(obj);
     nav_builder(dear_nav, obj.app_nav);
+
+
 
     ////////////////////////////////
     if (obj.Access == 1) {

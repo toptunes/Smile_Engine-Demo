@@ -75,8 +75,11 @@ class Final_render
 
         $s_case= str_replace("($tablename)", "",  $s_case);     
 
-        include "./switcher/routing.php";
-    
+
+        $s_case = Routing::GET_routing_t($s_case,$this->path);
+
+      
+
         include "./switcher/render_element_patterns.php";
         include "./switcher/database_global.php"; // check and set COOKIE
 
@@ -120,7 +123,12 @@ class Final_render
         $fin_method = get_value($method_select,$this->other_method);
 
         // Manual json creation (helps you know what it is)
-        return '{"method_fill":"'.$fin_method.'", "elementbox" : "'.$this->locateat.'" , "case" : "'.$s_case.'" , "Access":"'.$this->other_method.'", "path":"'.$this->path.'", "app_msg":"'.$html_msg.'", "app_data":'.$html_final.', "password":"", "username":"" ,"app_nav":'.$app_nav.',"el":"'.$el1.'","el2":"'.$el2.'" ,"el3":"'.$el3.'" ,"time_elapsed_secs":"'.$time_elapsed_secs.'" ,"memorys":"'.$memorystart.'" ,"memorye":"'.$memoryend.'" }';
+
+        $inside_head = Routing::GET_routing_head_inside($s_case);
+
+       
+        
+        return '{"inside_head":'.$inside_head.',"method_fill":"'.$fin_method.'", "elementbox" : "'.$this->locateat.'" , "case" : "'.$s_case.'" , "Access":"'.$this->other_method.'", "path":"'.$this->path.'", "app_msg":"'.$html_msg.'", "app_data":'.$html_final.', "password":"", "username":"" ,"app_nav":'.$app_nav.',"el":"'.$el1.'","el2":"'.$el2.'" ,"el3":"'.$el3.'" ,"time_elapsed_secs":"'.$time_elapsed_secs.'" ,"memorys":"'.$memorystart.'" ,"memorye":"'.$memoryend.'" }';
 
 
     }
