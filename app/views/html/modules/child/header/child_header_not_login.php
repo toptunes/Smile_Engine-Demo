@@ -9,7 +9,7 @@ $child_header_not_login= child('div','child_header_not_login','
 <div class="w-100">
 <div class="row w-100">
 <div class="col-6 col-sm-9 col-md-9 col-lg-9	col-xl-9	col-xxl-9  d-flex justify-content-start">
-	           				<a class="navbar-brand btn_id" href="/" id="fill_it" data-query="fill_it&o=2&module_name=fill_products_list&method=last_just_added"><img src="/app/images/uploads/logo-v2-light-file_115.png" alt="لوگوی آبیکی ها">
+	           				<a class="navbar-brand btn_id" href="/" id="fill_it" data-query="fill_it&o=2&module_name=fill_products_list&method=last_just_added"><img src="android/android-launchericon-48-48.png" alt="لوگوی آبیکی ها">
 </a>
 
 
