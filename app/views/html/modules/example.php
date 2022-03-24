@@ -18,11 +18,6 @@ description of page
 
 ');
 
-Routing::Set_routing_head_inside($module_name.'_description','
-
-description of page
-
-');
 
 
 Routing::Set_routing_head_inside($module_name.'_author','

@@ -52,7 +52,6 @@ If you want to use JSON you should learn how to make preload modules
 5 - If you use XAMPP, open http://127.0.0.1/your_module_name (you can see the module)
 
 
-6 - you can change URL routing by changing the array in : ```app/views/html/switcher/routing.php```
 
 ### tutorials
 

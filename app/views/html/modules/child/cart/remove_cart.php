@@ -33,20 +33,23 @@ $child_cart_remove_cart = child('div','child_cart_remove_cart','
 
 
 <div class="border-top ">
-<p class="p-3">
-'.$msg_rmover.'
-</p>
+    <p class="p-3">
+        '.$msg_rmover.'
+    </p>
 
 
 
-<form novalidate="" onsubmit="return false">
-<div class="btn-group " >
-<input type="hidden" name="how_many_wanted" value="'.$and_will_be.'" class="input_m_form">
-<button class="noradius m-2 btn abyekiha_bg btn-outline-secondary btn_id" type="button" id="form_submit" data-query="update_to_(all_orders)&when='.$when.'&next=cart" onclick="if_show_hide(\'s_popModal\');history.back(-1)"> بله </button>
+    <form novalidate="" onsubmit="return false">
+        <div class="btn-group ">
+            <input type="hidden" name="how_many_wanted" value="'.$and_will_be.'" class="input_m_form">
+            <button class="noradius m-2 btn abyekiha_bg btn-outline-secondary btn_id" type="button" id="form_submit"
+                data-query="update_to_(all_orders)&when='.$when.'&next=cart"
+                onclick="if_show_hide(\'s_popModal\');history.back(-1)"> بله </button>
 
-<button class="noradius m-2 btn btn-secondary" onclick="if_show_hide(\'s_popModal\');history.back(-1)"> خیر </button>
-</div>
-</form>
+            <button class="noradius m-2 btn btn-secondary" onclick="if_show_hide(\'s_popModal\');history.back(-1)"> خیر
+            </button>
+        </div>
+    </form>
 </div>
 
 

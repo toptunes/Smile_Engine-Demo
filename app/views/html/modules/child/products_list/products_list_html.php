@@ -13,7 +13,7 @@ $products_list = '
         
             <div dir="ltr" class="col-12  d-block justify-content-center">
 
-                <img src="android/android-launchericon-512-512.png" class="rounded " alt="...">
+                <img src="/app/images/android/android-launchericon-512-512.png" class="rounded " alt="...">
                 <div class="rounded">
                 <h5 class="card-title">Smile engine PHP/js Framework</h5>
                 <p>
