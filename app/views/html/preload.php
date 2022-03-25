@@ -1,6 +1,8 @@
 <?php
 $preload_html="";
 $html_final="";
+
+
 include "modules/add_city.php";
 include "modules/user_sign_up.php";
 include "modules/user_sign_up_2.php";

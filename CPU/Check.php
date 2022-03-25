@@ -13,8 +13,13 @@ class Check {
             include "./switcher/lanq_index.php";
             include "./switcher/security.php";
             include "./switcher/database_onstart.php";
-            include "preload.php";
 
+           
+            include "preload.php";
+            
+            $preload_data = Preloads::get_preload_data();
+
+           
             // make sure that language arrays works on preload htmls
             $dbox = str_ireplace($findkey2,$replacevalue2,  $dbox);
 
@@ -22,9 +27,9 @@ class Check {
             $time_elapsed_secs = microtime(true) - $start;
 
             // Manual json creation (helps you know what it is)
-            $dbox = '{"run":"'.urlencode($dbox).'" ,"preload_html":"'.rawUrlEncode($preload_html).'" , "time_elapsed_secs":"'.$time_elapsed_secs.'" }';  
+            $dbox = '{"run":"'.urlencode($dbox).'" ,"preload_html":'.json_encode($preload_data).' , "time_elapsed_secs":"'.$time_elapsed_secs.'" }';  
            
-            echo ($dbox);
+            echo $dbox;
 
             // KILL process. because we don't need any more
             die();

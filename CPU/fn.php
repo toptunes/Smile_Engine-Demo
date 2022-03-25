@@ -207,6 +207,8 @@ function pat($tag, $col, $users_r, $num)
 
 function preload($tag, $name, $data)
 {
+
+   
     $counter = 0;
     $counter2 = 0;
 
@@ -259,6 +261,10 @@ function preload($tag, $name, $data)
     }
 
     $export = str_replace("<form", "<form novalidate onsubmit=\"return false\"", $export);
+
+
+        Preloads::add_to_preload("org_".$name,$export);
+
 
     return $export;
 }

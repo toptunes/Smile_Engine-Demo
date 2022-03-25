@@ -10,7 +10,7 @@ var mod_el = 0;
 var allow = 1;
 var result = 2;
 var index = 0;
-var alert_color ="#ead3d3";
+var alert_color = "#ead3d3";
 var uploader_path = '/upload/image/index.php';
 var timetodo = 0;
 var dear_element_error = ". یک کلاس مشخص کنید با نام dear_element -> در این آی دی : ";
@@ -19,7 +19,7 @@ var rnd_nm_pho = Math.floor(Math.random() * 100000);
 var whatdef_at_end = "do_after_done";
 var index_api_url = "plt.php"; // It can be index.php or empty
 var my_modal_id = "myModal"; // there is only one modal popup in our application
-
+var preload_array;
 var first_module_run_on_app_start = index_api_url + "?q=fill_it&o=2&module_name=fill_products_list&sql=1&w=null&locateat=null&nav=1&oneach=10&method=products_list";
 
 var store = {}; // save things in array
@@ -541,7 +541,7 @@ function gather_form(formname, element, who, locateat, that_element, at_end_run,
             if (photo != null && photo.size < allowsize) {
                 var formData = new FormData();
                 formData.append("photo", photo);
-                fetch(uploader_path+'?format=' + allowformat + '&filename=' + rnd_nm_pho + photo.name, {
+                fetch(uploader_path + '?format=' + allowformat + '&filename=' + rnd_nm_pho + photo.name, {
                     credentials: "include",
                     method: "POST",
                     body: formData
@@ -691,7 +691,9 @@ function do_onstart(result) {
 
     setOption("o_db", obj_s.run);
 
-    document.getElementById("preload_html").innerHTML = decodeURIComponent(obj_s.preload_html);
+    //document.getElementById("preload_html").innerHTML = decodeURIComponent(obj_s.preload_html);
+
+    preload_array = obj_s.preload_html;
 
 
     do_runData('url');
@@ -954,53 +956,44 @@ function placing(data, json, myObj, access, elementiwant_be, method_fill, myObjl
     el_name = method_fill;
 
 
-
-    var elementiwant = document.getElementById(el_name);
-    if (elementiwant == null) {
-        alert("المنت مورد نیاز در ماژول وجود ندارد : " + el_name + " الگو های تکرار شونده ماژول در این قرار میگیرد");
-
-    } else {
-
-        for (var i = 0; i < myObjlength; i++) {
+    for (var i = 0; i < myObjlength; i++) {
 
 
-            document.getElementById(el_name).appendChild(createElementFromHTML(decodeURIComponent(elementiwant_be.innerHTML), i));
-
-
-        }
-
-
-        var sdata = document.getElementById(el_name).innerHTML;
-        var text = "";
-        for (let x in myObj) {
-
-            for (let y in myObj[x]) {
-                var re;
-
-                if (y == "product_real_price" || y == "product_off_price") {
-
-                    re = new RegExp("{{" + x + y + "}}", 'g');
-                    sdata = sdata.replace(re, new Intl.NumberFormat("fa").format(myObj[x][y]));
-                } else {
-                    re = new RegExp("{{" + x + y + "}}", 'g');
-                    sdata = sdata.replace(re, myObj[x][y]);
-                }
-
-
-
-
-            }
-        }
-
-        sdata = sdata.replace(/img_lee/g, "img");
-
-        document.getElementById(el_name).innerHTML = sdata;
-        refresh_elements();
-        onload_app_inside();
-
+        document.getElementById(el_name).appendChild(createElementFromHTML(decodeURIComponent(elementiwant_be), i));
 
 
     }
+
+
+    var sdata = document.getElementById(el_name).innerHTML;
+    var text = "";
+    for (let x in myObj) {
+
+        for (let y in myObj[x]) {
+            var re;
+
+            if (y == "product_real_price" || y == "product_off_price") {
+
+                re = new RegExp("{{" + x + y + "}}", 'g');
+                sdata = sdata.replace(re, new Intl.NumberFormat("fa").format(myObj[x][y]));
+            } else {
+                re = new RegExp("{{" + x + y + "}}", 'g');
+                sdata = sdata.replace(re, myObj[x][y]);
+            }
+
+
+
+
+        }
+    }
+
+    sdata = sdata.replace(/img_lee/g, "img");
+
+    document.getElementById(el_name).innerHTML = sdata;
+    refresh_elements();
+    onload_app_inside();
+
+
 
 
 }
@@ -1010,13 +1003,22 @@ function placing(data, json, myObj, access, elementiwant_be, method_fill, myObjl
 
 function json_more_t_one(data, json, access, method_fill) {
 
+    var preload_html;
 
-    var el_name_v = "org_" + access + "_pattern";
+
+    var elementiwant = preload_array["org_" + access + "_pattern"];
+
+    if (typeof elementiwant == undefined) {
+        elementiwant = preload_array["org_" + access];
+
+    }
+
+    /*var el_name_v = "org_" + access + "_pattern";
     var elementiwant = document.getElementById(el_name_v);
 
     if (elementiwant == null) {
         elementiwant = document.getElementById("org_" + access);
-    }
+    }*/
 
 
 
@@ -1107,7 +1109,9 @@ function other_method(access, app_data, method_fill, index) {
     }
     var el_mnt;
 
-    el_mnt = document.getElementById("org_" + access).innerHTML;
+
+
+    el_mnt = preload_array["org_" + access];
 
 
     html_final_edit(el_mnt, app_data, access, method_fill, index);
