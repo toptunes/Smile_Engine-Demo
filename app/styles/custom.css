@@ -2498,3 +2498,8 @@ border-bottom-left-radius: 0;
   color: #e88585;
 
 }
+.row>* {
+  
+  flex-shrink: 1;
+  
+}
