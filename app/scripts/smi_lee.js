@@ -1,61 +1,32 @@
-//Smi_lee is part of https://github.com/toptunes/Smile_Engine-Demo . This is factory pattern
-// author : Mohammad (dehaz) Norouzi 
-
 var h_smi_lee = [];
 var do_history = 0;
 var one_start_history = 0;
 var current_url;
-var dear_app;
-var dear_nav;
-var app_msg;
+var dear_app = "dear_app";
+var dear_nav = "dear_nav";
+var app_msg = "app_msg";
 var app_id = "app";
 var mod_el = 0;
 var allow = 1;
 var result = 2;
 var index = 0;
+var alert_color ="#ead3d3";
+var uploader_path = '/upload/image/index.php';
 var timetodo = 0;
+var dear_element_error = ". یک کلاس مشخص کنید با نام dear_element -> در این آی دی : ";
 var header_save_url = "";
 var rnd_nm_pho = Math.floor(Math.random() * 100000);
-var whatdef_at_end = "";
+var whatdef_at_end = "do_after_done";
+var index_api_url = "plt.php"; // It can be index.php or empty
+var my_modal_id = "myModal"; // there is only one modal popup in our application
 
-dear_app = "dear_app";
-dear_nav = "dear_nav";
-app_msg = "app_msg";
-whatdef_at_end = "do_after_done";
+var first_module_run_on_app_start = index_api_url + "?q=fill_it&o=2&module_name=fill_products_list&sql=1&w=null&locateat=null&nav=1&oneach=10&method=products_list";
 
-var store = {};
-setVar('devicePlatform', '/app/views/html');
+var store = {}; // save things in array
 
-on_app_RUN(store.devicePlatform + "/mohammad_norouzi_app.php"); // Run application
+setVar('devicePlatform', '/app/views/html'); // Example of saving in array
 
-
-
-function meta_builder(obj){
-
-    var title = obj.inside_head.title;
-   
-   
-       
-        document.title = title;
-    
-
-    var meta_obj = obj.inside_head.meta_name;
-    
-
-    for (let index = 0; index < meta_obj.length; index++) {
-
-        for (var key in meta_obj[index]) {
-            if (meta_obj[index].hasOwnProperty(key)) {
-
-
-                document.querySelector("meta["+key+"]" ).setAttribute("content", meta_obj[index][key]);
-
-            }
-        }
-    }
-  
-  
-}
+on_app_RUN(store.devicePlatform + "/mohammad_norouzi_app.php"); // Put the first view of HTML that we want to play with
 
 
 
@@ -84,7 +55,7 @@ function on_app_RUN(url) {
         clear_loading();
         document.getElementById(app_id).innerHTML = html;
         // do_after_done(html);
-        check_https("plt.php" + "?q=mas");
+        check_https(index_api_url + "?q=mas");
 
 
     }).catch(function (err) {
@@ -114,6 +85,7 @@ function fail_req(status, err, signal, myTimeout, whatfor, stop, whatafterrun, w
     clear_loading();
     clearInterval(myTimeout);
 
+
     if (signal.aborted == true) {
         timetodo = timetodo + 1;
         refresh_elements();
@@ -124,7 +96,7 @@ function fail_req(status, err, signal, myTimeout, whatfor, stop, whatafterrun, w
 }
 
 function close_mymodal(param) {
-    var modal = document.getElementById("myModal");
+    var modal = document.getElementById(my_modal_id);
 
     if (modal != null && modal.style.display == 'block') {
         modal.style.display = 'none';
@@ -176,36 +148,36 @@ function alert_2time(param, param2) {
 }
 
 function appendd(whatfor, stop, current_url_dt) {
-
-    current_url = current_url_dt;
-
     /*
-    do_history=1;
-
-    var how_many_allowed = 10;
-    if(stop ==3){
-    h_smi_lee.pop();
-
-    }
-    if(stop!=2 && stop!=3){
-
-    if(h_smi_lee[h_smi_lee.length - 1] != whatfor){
-
-     h_smi_lee[h_smi_lee.length] = whatfor;
-
-    if(h_smi_lee.length > how_many_allowed){
-    h_smi_lee.shift();
-    }
-
-
-
-    }
-
-
-
-
-    }
-    */
+     current_url = current_url_dt;
+ 
+     
+     do_history=1;
+ 
+     var how_many_allowed = 10;
+     if(stop ==3){
+     h_smi_lee.pop();
+ 
+     }
+     if(stop!=2 && stop!=3){
+ 
+     if(h_smi_lee[h_smi_lee.length - 1] != whatfor){
+ 
+      h_smi_lee[h_smi_lee.length] = whatfor;
+ 
+     if(h_smi_lee.length > how_many_allowed){
+     h_smi_lee.shift();
+     }
+ 
+ 
+ 
+     }
+ 
+ 
+ 
+ 
+     }
+     */
 }
 
 function run_s_pop(param) {
@@ -230,7 +202,7 @@ function not_login_custom(formname, who, fname) {
 
     var uuu = document.getElementById('username').value;
     var ppp = document.getElementById('password').value;
-    var whatfor = "plt.php?q=&nav=1";
+    var whatfor = index_api_url + "?q=&nav=1";
     get_https(whatfor, 0, whatdef_at_end, null, timetodo, uuu, ppp);
 
 
@@ -238,13 +210,13 @@ function not_login_custom(formname, who, fname) {
 }
 
 function runmini(param1) {
-    get_https("plt.php?q=" + param1 + "&nav=1", 1, whatdef_at_end);
+    get_https(index_api_url + "?q=" + param1 + "&nav=1", 1, whatdef_at_end);
 
 }
 
 function open_modal(at_end) {
 
-    var modal = document.getElementById("myModal");
+    var modal = document.getElementById(my_modal_id);
     modal.style.display = "block";
     /*modal.style.zIndex = 4;*/
 
@@ -281,7 +253,7 @@ function at_end_login(at_end) {
     var passw = document.getElementById('password');
     var hash = document.getElementById('hash');
     if (usern !== null && hash !== null) {
-        var whatfor = "plt.php?q=profile&nav=1";
+        var whatfor = index_api_url + "?q=profile&nav=1";
         get_https(whatfor, 0, whatdef_at_end, null, timetodo, usern.value, passw.value);
         setOption("hash", hash.value);
 
@@ -295,7 +267,7 @@ function at_end_login(at_end) {
 function log_out_custom(formname, who, fname) {
 
 
-    var whatfor = "plt.php?q=logout&nav=1";
+    var whatfor = index_api_url + "?q=logout&nav=1";
 
     get_https(whatfor, 0, "after_logout", null, timetodo, null, null);
 
@@ -305,7 +277,7 @@ function log_out_custom(formname, who, fname) {
 function after_logout(formname, who, fname) {
 
 
-    var whatfor = "plt.php?q=fill_it&o=2&module_name=fill_products_list&nav=1";
+    var whatfor = index_api_url + "?q=fill_it&o=2&module_name=fill_products_list&nav=1";
 
     get_https(whatfor, 0, whatdef_at_end, null, timetodo, null, null);
     replaceState_me("1", "/", "/");
@@ -421,7 +393,7 @@ function onload_Listener(parameterName, param, who, fn, fname, locateat, kind, a
                     window[parameterName](param, who, fname);
                 } else {
                     setVar('run_executer', '1');
-                    get_https("plt.php" + "?q=" + param + "&w=" + who + "&locateat=" + locateat, 0, whatdef_at_end, at_end_run);
+                    get_https(index_api_url + "?q=" + param + "&w=" + who + "&locateat=" + locateat, 0, whatdef_at_end, at_end_run);
                 }
                 ////////////////									 
 
@@ -515,7 +487,7 @@ function gather_form(formname, element, who, locateat, that_element, at_end_run,
 
 
                 msg_er += "<br>" + msgg;
-                elements[i].style.backgroundColor = "#ead3d3";
+                elements[i].style.backgroundColor = alert_color;
 
 
             }
@@ -547,7 +519,7 @@ function gather_form(formname, element, who, locateat, that_element, at_end_run,
                 }
 
                 noop = elements[i].name;
-                elements[i].style.backgroundColor = "#ead3d3";
+                elements[i].style.backgroundColor = alert_color;
             } else {
                 elements[i].style.backgroundColor = "unset";
             }
@@ -569,7 +541,7 @@ function gather_form(formname, element, who, locateat, that_element, at_end_run,
             if (photo != null && photo.size < allowsize) {
                 var formData = new FormData();
                 formData.append("photo", photo);
-                fetch('/upload/image/index.php?format=' + allowformat + '&filename=' + rnd_nm_pho + photo.name, {
+                fetch(uploader_path+'?format=' + allowformat + '&filename=' + rnd_nm_pho + photo.name, {
                     credentials: "include",
                     method: "POST",
                     body: formData
@@ -652,7 +624,7 @@ function gather_form(formname, element, who, locateat, that_element, at_end_run,
 
     if (typeof noop == 'undefined') {
 
-        get_https_2("plt.php" + "?q=" + formname + "&locateat=" + locateat, names, at_end_run, at_end_run_2);
+        get_https_2(index_api_url + "?q=" + formname + "&locateat=" + locateat, names, at_end_run, at_end_run_2);
 
 
     } else {
@@ -744,13 +716,13 @@ function do_runData(param) {
         param_q = param;
     }
     if (param_q) {
-        whatfor = "plt.php?q=" + param_q + "&nav=1";
+        whatfor = index_api_url + "?q=" + param_q + "&nav=1";
         get_https(whatfor, 0, whatdef_at_end);
 
         one_start_history = 2;
 
     } else {
-        whatfor = "plt.php?q=fill_it&o=2&module_name=fill_products_list&sql=1&w=null&locateat=null&nav=1&oneach=10&method=products_list";
+        whatfor = first_module_run_on_app_start;
         get_https(whatfor, 0, whatdef_at_end, "", timetodo);
 
 
@@ -800,7 +772,7 @@ function clear_loading() {
 }
 
 
-function get_error(url) {
+function get_error(url, err) {
     clear_loading();
 
     fetch(url).then(function (response) {
@@ -828,11 +800,8 @@ function do_after_done(result, whatafterrun) {
 
 
 
-    
-    meta_builder(obj);
+
     nav_builder(dear_nav, obj.app_nav);
-
-
 
     ////////////////////////////////
     if (obj.Access == 1) {
@@ -850,7 +819,7 @@ function do_after_done(result, whatafterrun) {
                 just_put_it_located(decodeURIComponent(calc_data), obj.elementbox);
 
             } else {
-                alert("برای المنتی که نامش " + obj.elementbox + " است. یک کلاس مشخص کنید با نام dear_element");
+                alert(dear_element_error + obj.elementbox);
             }
 
         } else {
@@ -1221,7 +1190,7 @@ function custom_onload_Listeners() {
 
 
 
-    var modal = document.getElementById("myModal");
+    var modal = document.getElementById(my_modal_id);
     var span = document.getElementById("close_span");
     span.onclick = function () {
         modal.style.display = "none";
@@ -1248,7 +1217,7 @@ function custom_onload_Listeners() {
 
         if (event) {
 
-            var modal = document.getElementById("myModal");
+            var modal = document.getElementById(my_modal_id);
             var my_modal = document.getElementById("my_modal");
             var s_popModal = document.getElementById("s_popModal");
             /*alert(JSON.stringify(history.state));*/
@@ -1421,7 +1390,7 @@ function backbutton_function(event) {
 
 
 function listen_the_keys(e) {
-    var modal = document.getElementById("myModal");
+    var modal = document.getElementById(my_modal_id);
 
 
     if (e.code == 'backbutton' || e.key == 'backbutton' || e.key == 'backbutton') {
@@ -2036,7 +2005,7 @@ function findGetParameter(parameterName) {
 function dashboard_home(param) {
     // number 1
     setVar('run_executer', '1');
-    get_https("plt.php" + "?q=" + param);
+    get_https(index_api_url + "?q=" + param);
 
 
 }
@@ -2149,7 +2118,7 @@ function get_https_2(whatfor, datastring, whatafterrun, whatafterrun_2, uuu, ppp
 
 
         })
-        .catch((err) => console.log(err));
+        .catch((err) => get_error(store.devicePlatform + '/' + whatfor, err));
 }
 
 
