@@ -26,7 +26,6 @@ header('Expires: '. gmdate('D, d M Y H:i:s \G\M\T', time() + 386400));
          </div>
       </div>
    </div>
-   <div id="preload_html" class="preload_html"></div>
 </div>
 <div id="s_popModal" class="fade-in" style="display:none">
    <div class="s_pop m-2">
