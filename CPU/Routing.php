@@ -9,7 +9,7 @@ class Routing {
 
 
 	
-    public static function GET_routing_t($s_case,$path){
+    public static function GET_routing_t($s_case,$path,$module_name){
         
     
         
@@ -19,19 +19,25 @@ class Routing {
 
     ];
 
+		if($module_name !=""){
+			$s_case = $module_name;
+		}
+		
 
-    $s_case = ifempty_self(
-        get_value(self::$routing_t,$s_case),
-        $path);
-    
+		$s_case = ifempty_self( get_value( self::$routing_t , $s_case ), $path );
+		
+
         
         return $s_case;
 
 
     }
     
-    public static function GET_routing_head_inside($s_case){
+    public static function GET_routing_head_inside($s_case,$module_name){
           
+		if($module_name !=""){
+			$s_case = $module_name;
+		}
     /* 
     Some variables that you created before on modules, 
     Set them to  this array below and make Titles and Descriptions work dynamically
@@ -58,19 +64,21 @@ class Routing {
     $description_exported= get_value(self::$routing_head_inside ,strtok($s_case, '/')."_description");
     $author_exported= get_value(self::$routing_head_inside ,strtok($s_case, '/')."_author");
 
-
+		
+ 
+		
     $inside_head = '
     {
-        "title": "'.$title_exported.'",
+        "title": '.json_encode($title_exported).',
         "meta_name": [
-            {"name=\'description\'":"'.$description_exported.'"},
-            {"name=\'author\'":"'.$author_exported.'"}
+            {"name=\'description\'":'.json_encode($description_exported).'},
+            {"name=\'author\'":'.json_encode($author_exported).'}
         ]
     
         
     }
     ';
-        
+
 
 
         return $inside_head;

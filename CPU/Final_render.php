@@ -8,29 +8,28 @@ class Final_render
     private $nav;
     private $locateat;
     private $other_method;
-  
+	public $module_name;
 
     public function __construct()
     {
-        // on APP start, get some query from url
-
         $this->path = Get_ready_start::GetUrlQuery("q");
 
         $this->nav = Get_ready_start::GetUrlQuery("nav");
 
         $this->locateat = Get_ready_start::GetUrlQuery("locateat");
-
+		
+		$this->module_name = Get_ready_start::GetUrlQuery("module_name");
+		
         $this->other_method = Get_ready_start::GetUrlQuery("o");
 
+		
       
     }
 
     public function export()
     {
 
-        // what is memory on start? 
         $memorystart =  round(memory_get_usage()/1048576,2).''.' MB';
-
 
         $preload_html="";
         $html_final="";
@@ -45,22 +44,24 @@ class Final_render
         $user_id = 0;
         $username="";
         $password="";
-       
         $r_path ="";
         $datacontent ="";
+ 		$this_mod ="";
+		
         $start = microtime(true);
 
-        // Get json posted by front-end
         $data = Get_ready_start::GetUrlJsonAsArray();
         
-        //check isset for each variable that we have
+        
         $datacontent = isset($data->datacontent) ? Get_ready_start::Checkisset($data->datacontent,"1","") : "";
         
 
         $s_case = isset($data->s_case) ? Get_ready_start::Checkisset($data->s_case,"1","") : "";
 
         $o_db = isset($data->o_db) ? Get_ready_start::Checkisset($data->o_db,"1","") : "";
-
+		
+ 	
+		
 
         $datacontentsjson = Get_ready_start::Checkisset($datacontent,'{'.$datacontent.'}','{ "run":"1" }');
       
@@ -70,20 +71,19 @@ class Final_render
 
         $s_case = Get_ready_start::ifEmpty_Or_Null($this->path,"dash_page",$this->path);
 
-        //Get data inside Parenthesis 
         $tablename = Get_ready_start::GetinsideParenthesis($s_case,"1");
 
+		
         $s_case= str_replace("($tablename)", "",  $s_case);     
+		
+		
+        $s_case = Routing::GET_routing_t($s_case,$this->path,$this->module_name);
 
-
-        $s_case = Routing::GET_routing_t($s_case,$this->path);
-
-      
-
+   
         include "./switcher/render_element_patterns.php";
         include "./switcher/database_global.php"; // check and set COOKIE
 
-        //Go to check mas on app start
+
         check::mas($this->path,$start);
 
        
@@ -100,7 +100,7 @@ class Final_render
     
         }
 
-        // sanitize_output make html minify
+
         $html_final = sanitize_output($switcher_index_obj -> getswitcher_case($s_case,$datacontentsjson,$tablename,$not_user,$user_level,$user_id,$o_db));
 
 
@@ -122,12 +122,10 @@ class Final_render
 
         $fin_method = get_value($method_select,$this->other_method);
 
-        // Manual json creation (helps you know what it is)
-
-        $inside_head = Routing::GET_routing_head_inside($s_case);
-
-       
-        
+		$inside_head = Routing::GET_routing_head_inside($s_case,$this->module_name);
+		
+		
+		
         return '{"inside_head":'.$inside_head.',"method_fill":"'.$fin_method.'", "elementbox" : "'.$this->locateat.'" , "case" : "'.$s_case.'" , "Access":"'.$this->other_method.'", "path":"'.$this->path.'", "app_msg":"'.$html_msg.'", "app_data":'.$html_final.', "password":"", "username":"" ,"app_nav":'.$app_nav.',"el":"'.$el1.'","el2":"'.$el2.'" ,"el3":"'.$el3.'" ,"time_elapsed_secs":"'.$time_elapsed_secs.'" ,"memorys":"'.$memorystart.'" ,"memorye":"'.$memoryend.'" }';
 
 
