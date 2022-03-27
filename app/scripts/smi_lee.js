@@ -168,7 +168,7 @@ function abort_controller(signal, controller, whatfor, stop, whatafterrun, whata
 function abort_controller_2(controller_2, whatfor, datastring, whatafterrun, whatafterrun_2) {
     controller_2.abort();
     refresh_elements();
-    POST_https(whatfor, datastring, whatafterrun, whatafterrun_2);
+    get_https_2(whatfor, datastring, whatafterrun, whatafterrun_2);
 }
 
 function alert_2time(param, param2) {
@@ -283,7 +283,7 @@ function at_end_login(at_end) {
     var hash = document.getElementById('hash');
     if (usern !== null && hash !== null) {
         var whatfor = index_api_url + "?q=profile&nav=1";
-        get_https(whatfor, 0, whatdef_at_end, null, timetodo, usern.value, passw.value);
+        get_https_2(whatfor, 0, whatdef_at_end, null, usern.value, passw.value);
         setOption("hash", hash.value);
 
         replaceState_me("1", "/profile", "/profile");
@@ -653,7 +653,7 @@ function gather_form(formname, element, who, locateat, that_element, at_end_run,
 
     if (typeof noop == 'undefined') {
 
-        POST_https(index_api_url + "?q=" + formname + "&locateat=" + locateat, names, at_end_run, at_end_run_2);
+        get_https_2(index_api_url + "?q=" + formname + "&locateat=" + locateat, names, at_end_run, at_end_run_2);
 
 
     } else {
@@ -2127,7 +2127,7 @@ if (dearappelement == "") {
 }
 */
 
-function POST_https(whatfor, datastring, whatafterrun, whatafterrun_2, uuu, ppp) {
+function get_https_2(whatfor, datastring, whatafterrun, whatafterrun_2, uuu, ppp) {
 
 
     fetch(store.devicePlatform + '/' + whatfor, {
@@ -2181,9 +2181,11 @@ function get_https(whatfor, stop, whatafterrun, whatafterrun_2, timetodo, uuu, p
 
     const myTimeout = setTimeout(() => controller.abort(), timeout);
 
-    appendd(whatfor, stop, htcss(window.location.href));
 
+
+    appendd(whatfor, stop, htcss(window.location.href));
     loading();
+
 
     fetch(store.devicePlatform + '/' + whatfor + "&timetodo=" + timetodo, {
         method: 'GET',
@@ -2207,6 +2209,9 @@ function get_https(whatfor, stop, whatafterrun, whatafterrun_2, timetodo, uuu, p
         })
         .catch((status, err) => fail_req(status, err, signal, myTimeout, whatfor, stop, whatafterrun, whatafterrun_2, timetodo));
 
+
+
+        
 
 }
 
