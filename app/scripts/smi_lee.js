@@ -26,7 +26,7 @@ var store = {}; // save things in array
 
 setVar('devicePlatform', '/app/views/html'); // Example of saving in array
 
-on_app_RUN(store.devicePlatform + "/mohammad_norouzi_app.php"); // Put the first view of HTML that we want to play with
+GET_URL(store.devicePlatform + "/mohammad_norouzi_app.php"); // Put the first view of HTML that we want to play with
 
 
 function meta_builder(obj){
@@ -71,7 +71,7 @@ function setVar(varName, varValue) {
     store[varName] = varValue
 }
 
-function on_app_RUN(url) {
+function GET_URL(url) {
 
     fetch(url).then(function (response) {
         // The API call was successful!
@@ -82,8 +82,10 @@ function on_app_RUN(url) {
         clear_loading();
         document.getElementById(app_id).innerHTML = html;
         // do_after_done(html);
-        check_https(index_api_url + "?q=mas");
 
+        GET_METHOD(index_api_url + "?q=mas");
+
+        
 
     }).catch(function (err) {
         // There was an error
@@ -166,7 +168,7 @@ function abort_controller(signal, controller, whatfor, stop, whatafterrun, whata
 function abort_controller_2(controller_2, whatfor, datastring, whatafterrun, whatafterrun_2) {
     controller_2.abort();
     refresh_elements();
-    get_https_2(whatfor, datastring, whatafterrun, whatafterrun_2);
+    POST_https(whatfor, datastring, whatafterrun, whatafterrun_2);
 }
 
 function alert_2time(param, param2) {
@@ -651,7 +653,7 @@ function gather_form(formname, element, who, locateat, that_element, at_end_run,
 
     if (typeof noop == 'undefined') {
 
-        get_https_2(index_api_url + "?q=" + formname + "&locateat=" + locateat, names, at_end_run, at_end_run_2);
+        POST_https(index_api_url + "?q=" + formname + "&locateat=" + locateat, names, at_end_run, at_end_run_2);
 
 
     } else {
@@ -2125,7 +2127,7 @@ if (dearappelement == "") {
 }
 */
 
-function get_https_2(whatfor, datastring, whatafterrun, whatafterrun_2, uuu, ppp) {
+function POST_https(whatfor, datastring, whatafterrun, whatafterrun_2, uuu, ppp) {
 
 
     fetch(store.devicePlatform + '/' + whatfor, {
@@ -2179,23 +2181,14 @@ function get_https(whatfor, stop, whatafterrun, whatafterrun_2, timetodo, uuu, p
 
     const myTimeout = setTimeout(() => controller.abort(), timeout);
 
-
-
-
-
-
     appendd(whatfor, stop, htcss(window.location.href));
+
     loading();
+
     fetch(store.devicePlatform + '/' + whatfor + "&timetodo=" + timetodo, {
-        method: 'POST',
+        method: 'GET',
         signal: signal,
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            'username': uuu,
-            'password': ppp,
-            'hash': getOption("hash"),
-            'o_db': getOption('o_db')
-        }),
     })
         .then((res) => res.json())
         .then((data) => {
@@ -2217,17 +2210,12 @@ function get_https(whatfor, stop, whatafterrun, whatafterrun_2, timetodo, uuu, p
 
 }
 
-function check_https(whatfor, uuu, ppp) {
+function GET_METHOD(whatfor) {
 
 
     fetch(store.devicePlatform + '/' + whatfor, {
-        method: 'POST',
+        method: "GET",
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            'username': uuu,
-            'hash': getOption("hash"),
-            'password': ppp
-        }),
     })
         .then((res) => res.json()
         )
