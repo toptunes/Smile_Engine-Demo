@@ -21,7 +21,12 @@ var index_api_url = "plt.php"; // It can be index.php or empty
 var my_modal_id = "myModal"; // there is only one modal popup in our application
 var preload_array;
 var first_module_run_on_app_start = index_api_url + "?q=fill_it&o=2&module_name=fill_products_list&sql=1&w=null&locateat=null&nav=1&oneach=10&method=products_list";
+var editor;
+var array_of_what_at_end_run = {
+"add_news":"handle_rich_text",
+"module_name":"function_name"
 
+};
 var store = {}; // save things in array
 
 setVar('devicePlatform', '/app/views/html'); // Example of saving in array
@@ -229,11 +234,19 @@ function closeAll_details(openDetails) {
 
 function not_login_custom(formname, who, fname) {
 
-    var uuu = document.getElementById('username').value;
-    var ppp = document.getElementById('password').value;
-    var whatfor = index_api_url + "?q=&nav=1";
-    get_https(whatfor, 0, whatdef_at_end, null, timetodo, uuu, ppp);
+     
+    var usern = document.getElementById('username');
+    var passw = document.getElementById('password');
+    var hash = document.getElementById('hash');
+    
+    if (usern !== null && hash !== null) {
+        var whatfor = index_api_url + "?q=admin&nav=1";
+       
+        get_https_2(whatfor, 0, whatdef_at_end, null, usern.value, passw.value);
+        setOption("hash", hash.value);
 
+        replaceState_me("1", "/admin", "/admin");
+    }
 
 
 }
@@ -242,7 +255,11 @@ function runmini(param1) {
     get_https(index_api_url + "?q=" + param1 + "&nav=1", 1, whatdef_at_end);
 
 }
+function open_modal_rich(at_end) {
+    open_modal(at_end);
+    handle_rich_text(at_end);
 
+}
 function open_modal(at_end) {
 
     var modal = document.getElementById(my_modal_id);
@@ -402,7 +419,8 @@ function onload_Listener(parameterName, param, who, fn, fname, locateat, kind, a
             setVar('at_end', at_end_run);
 
             if (at_click_run != null) {
-                whatdef_at_end = at_click_run;
+                window[at_click_run](param);
+
             }
 
             ////////////////////////////////									 
@@ -574,6 +592,14 @@ function gather_form(formname, element, who, locateat, that_element, at_end_run,
                     credentials: "include",
                     method: "POST",
                     body: formData
+                }).then(function (html) {
+                    // This is the HTML from our response as a text string
+            
+                    alert("عکس آپلود شد");
+            
+                }).catch(function (err) {
+                    // There was an error
+                    alert("عکس آپلود نشد");
                 });
 
             } else {
@@ -631,6 +657,7 @@ function gather_form(formname, element, who, locateat, that_element, at_end_run,
                 case "textarea":
                     var text_arrea = fil_ter_nosymbol(elements[i].value);
                     text_arrea = text_arrea.replace(/\r?\n/g, '<br />');
+                    text_arrea = encodeURIComponent(text_arrea);
                     names = names + " " + "\"" + calc_what_name_db(elements[i].name) + "\"" + " : " + " " + "\"" + text_arrea + "\"" + ",";
 
                     break;
@@ -741,14 +768,14 @@ function do_runData(param) {
 
     if (param == "url") {
         param_q = htcss(window.location.href);
-
+        whatafterrun_2 = array_of_what_at_end_run[param_q];
 
     } else {
         param_q = param;
     }
     if (param_q) {
         whatfor = index_api_url + "?q=" + param_q + "&nav=1";
-        get_https(whatfor, 0, whatdef_at_end);
+        get_https(whatfor, 0, whatdef_at_end,whatafterrun_2);
 
         one_start_history = 2;
 
@@ -2237,3 +2264,23 @@ function GET_METHOD(whatfor) {
 
 }
 
+/********************************** */
+
+function handle_rich_text(){
+
+    editor= CKEDITOR.replace( 'editor1' );
+     CKEDITOR.config.contentsLangDirection = 'rtl';
+ 
+ 
+ 
+ }
+ 
+ function get_textarea(){
+ 
+     var data = CKEDITOR.instances.editor1.getData();
+     
+     document.getElementById("news_content").value = data;
+    
+     
+ 
+ }
