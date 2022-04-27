@@ -1,4 +1,4 @@
-<?php
+
 '.database_onstart('tablename','col_name',$this->o_db,0).'
 
 	

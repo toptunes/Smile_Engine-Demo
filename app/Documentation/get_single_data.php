@@ -1,4 +1,3 @@
-<?php
 
 
 $obj = (Array)json_decode(get_mysql("

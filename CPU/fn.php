@@ -351,6 +351,20 @@ function get_value($type, $value)
     return $export;
 }
 
+function ifempty_1_else_2($type, $one,$two)
+{
+
+    if ($type == "")
+    {
+        $export = $one;
+    }
+    else
+    {
+        $export = $two;
+    }
+    return $export;
+}
+
 function ifdef($type, $value)
 {
 
